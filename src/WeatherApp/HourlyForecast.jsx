@@ -1,7 +1,7 @@
 import React from 'react';
 import humidity_icon from '../assets/humidity.png';
 import wind_icon from '../assets/wind.png';
-import wicon from './WeatherSearch';
+import wicon from './Search';
 
 
 function HourlyForecast() {
@@ -11,18 +11,18 @@ function HourlyForecast() {
                         <div className='weather-image-card mt-3 mb-1'>
                             <img src={wicon} alt="" className="w-16 h-16" />
                         </div>
-                        <div className="weather-temp-card text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card text-md font-bold text-white">15:00</div>
+                        <div className="weather-temp-card-15 text-3xl font-bold text-white">24°C</div>
+                        <div className="weather-time-card-15 text-md font-bold text-white">15:00</div>
                         <div className="flex flex-col items-center mt-4">
                             <div className="flex items-center justify-center">
                                 <div className="flex flex-col items-center text-center">
                                     <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card mt-2 text-xs text-white">64%</div>
+                                    <div className="humidity-percent-card-15 mt-2 text-xs text-white">64%</div>
                                     <div className="text-white text-[9px]">Humidity</div>
                                 </div>
                                 <div className="flex flex-col items-center ml-4 text-center">
                                     <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card mt-2 text-xs text-white">18 km/h</div>
+                                    <div className="wind-rate-card-15 mt-2 text-xs text-white">18 km/h</div>
                                     <div className="text-white text-[9px]">Wind Speed</div>
                                 </div>
                             </div>

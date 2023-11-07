@@ -1,7 +1,7 @@
 import React from 'react';
 import humidity_icon from '../assets/humidity.png';
 import wind_icon from '../assets/wind.png';
-import wicon from './WeatherSearch';
+import wicon from './Search';
 
 function CurrentWeather() {
     return (

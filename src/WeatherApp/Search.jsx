@@ -5,7 +5,7 @@ import rain_icon from '../assets/rain.png';
 import search_icon from '../assets/search.png'; // Ganti dengan path yang sesuai
 import snow_icon from '../assets/snow.png';
 
-function WeatherSearch() {
+function Search() {
     // Tambahkan fungsi search() di sini
     let api_key = "4cdc9b67bb98760e77eba182643b88f7";
 
@@ -61,16 +61,16 @@ function WeatherSearch() {
             let response = await fetch(url1);
             let data = await response.json();
 
-            const targetTimestamp = 1699369200; // Timestamp untuk 7 November 2023, 15:00:00
+            const targetTimestamp = 1699801200; // Timestamp untuk 7 November 2023, 15:00:00
 
             const targetData = data.list.find(item => item.dt === targetTimestamp);
 
             if (targetData) {
                 // Ambil data cuaca untuk jam yang diinginkan
-                const humidityCard = document.getElementsByClassName("humidity-percent-card");
-                const windCard = document.getElementsByClassName("wind-rate-card");
-                const temperatureCard = document.getElementsByClassName("weather-temp-card");
-                const dateCard = document.getElementsByClassName("weather-time-card");
+                const humidityCard = document.getElementsByClassName("humidity-percent-card-15");
+                const windCard = document.getElementsByClassName("wind-rate-card-15");
+                const temperatureCard = document.getElementsByClassName("weather-temp-card-15");
+                const dateCard = document.getElementsByClassName("weather-time-card-15");
 
                 humidityCard[0].innerHTML = targetData.main.humidity + "%";
                 windCard[0].innerHTML = targetData.wind.speed + " km/h";
@@ -457,9 +457,9 @@ function WeatherSearch() {
         } catch (error) {
             console.error("Error fetching data:", error);
         }
-
+    }
     return (
-        <div className='flex items-center justify-center space-x-4'>
+        <div className='Search flex items-center justify-center space-x-4'>
             <input type="text" className='cityInput border border-gray-300 rounded-full px-4 py-2' placeholder='search' />
             <div className="search-icon" onClick={search} style={{ cursor: 'pointer' }}>
                 <img src={search_icon} alt="Search Icon" className="w-6 h-6" />
@@ -467,5 +467,5 @@ function WeatherSearch() {
         </div>
     );
 }
-}
-export default WeatherSearch;
+
+export default Search;

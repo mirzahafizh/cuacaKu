@@ -1,40 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './WeatherApp.css';
 
+import clear_icon from '../assets/clear.png';
 import cloud_icon from '../assets/cloud.png';
+import drizzle_icon from '../assets/drizzle.png';
 import humidity_icon from '../assets/humidity.png';
+import rain_icon from '../assets/rain.png';
 import search_icon from '../assets/search.png';
+import snow_icon from '../assets/snow.png';
 import wind_icon from '../assets/wind.png';
 
 const WeatherApp = () => {
 
     let api_key = "4cdc9b67bb98760e77eba182643b88f7";
 
-    const search = async () => { // Tandai fungsi sebagai async
+    const [wicon,setWicon] = useState(clear_icon);
+
+    const search = async () => {
         const element = document.getElementsByClassName("cityInput");
         if (element[0].value === "") {
             return 0;
         }
-
+    
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=metric&appid=${api_key}`;
-
+    
         try {
             let response = await fetch(url);
             let data = await response.json();
-
+    
             const humidity = document.getElementsByClassName("humidity-percent");
             const wind = document.getElementsByClassName("wind-rate");
             const temperature = document.getElementsByClassName("weather-temp");
             const location = document.getElementsByClassName("weather-location");
-
+            const time = document.getElementsByClassName("weather-time");
             humidity[0].innerHTML = data.main.humidity + "%";
             wind[0].innerHTML = data.wind.speed + " km/h";
             temperature[0].innerHTML = data.main.temp + "°C";
             location[0].innerHTML = data.name;
+    
+            if (data.weather[0].icon=== "01d" || data.weather[0].icon === "01n") {
+                setWicon(clear_icon);
+            } else if (data.weather[0].icon=== "02d" || data.weather[0].icon === "02n") {
+                setWicon(cloud_icon);
+            } else if (data.weather[0].icon=== "03d" || data.weather[0].icon === "03n") {
+                setWicon(drizzle_icon);
+            } else if (data.weather[0].icon=== "04d" || data.weather[0].icon === "04n") {
+                setWicon(drizzle_icon);
+            } else if (data.weather[0].icon=== "09d" || data.weather[0].icon === "09n") {
+                setWicon(rain_icon);
+            } else if (data.weather[0].icon=== "10d" || data.weather[0].icon === "10n") {
+                setWicon(rain_icon);
+            } else if (data.weather[0].icon=== "13d" || data.weather[0].icon === "13n") {
+                setWicon(snow_icon);
+            } else {
+                setWicon(clear_icon);
+            }
+            
+            
         } catch (error) {
             console.error("Error fetching data:", error);
         }
     }
+    
 
     return (
         <div className='container'>
@@ -46,7 +73,7 @@ const WeatherApp = () => {
             </div>
             <div className='current-data'>
                 <div className='weather-image'>
-                    <img src={cloud_icon} alt="Cloud Icon" className='cloud-icon' />
+                    <img src={wicon} alt="" />
                 </div>
                 <div className="weather-temp">24°C</div>
                 <div className="weather-location">London</div>
@@ -66,6 +93,10 @@ const WeatherApp = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="hourly-forecast">
+
+
             </div>
         </div>
     );

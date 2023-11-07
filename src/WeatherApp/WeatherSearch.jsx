@@ -1,21 +1,15 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
-
-import clear_icon from '../assets/clear.png';
-import cloud_icon from '../assets/cloud.png';
-import drizzle_icon from '../assets/drizzle.png';
-import humidity_icon from '../assets/humidity.png';
+import clear_icon from '../assets/clear.png'; // Ganti dengan path
+import { default as cloud_icon, default as drizzle_icon } from '../assets/cloud.png';
 import rain_icon from '../assets/rain.png';
-import search_icon from '../assets/search.png';
+import search_icon from '../assets/search.png'; // Ganti dengan path yang sesuai
 import snow_icon from '../assets/snow.png';
-import wind_icon from '../assets/wind.png';
 
-const WeatherApp = () => {
-
+function WeatherSearch() {
+    // Tambahkan fungsi search() di sini
     let api_key = "4cdc9b67bb98760e77eba182643b88f7";
 
     const [wicon,setWicon] = useState(clear_icon);
-
     const search = async () => {
         const element = document.getElementsByClassName("cityInput");
         if (element[0].value === "") {
@@ -464,215 +458,14 @@ const WeatherApp = () => {
             console.error("Error fetching data:", error);
         }
 
-    }
-
     return (
-        <div className='container mx-auto p-6 bg-gray-500'>
-            <div className='flex items-center justify-center space-x-4'>
-                <input type="text" className='cityInput border border-gray-300 rounded-full px-4 py-2' placeholder='search' />
-                <div className="search-icon" onClick={() => { search() }} style={{ cursor: 'pointer' }}>
-                    <img src={search_icon} alt="Search Icon" className="w-6 h-6" />
-                </div>
-            </div>
-            <div className="flex gap-4 mt-10 ml-8">
-                <div className='flex flex-col items-center justify-center bg-gray-400 p-4 rounded-xl shadow-lg w-[350px] h-[350px]'>
-                    <div className='mb-4'>
-                        <img src={wicon} alt="" className="w-16 h-16" />
-                    </div>
-                    <div className="weather-temp text-5xl font-bold text-white">24°C</div>
-                    <div className="weather-location text-xl text-white">London</div>
-                    <div className="flex flex-col items-center mt-4">
-                    <div className="flex items-center justify-center">
-                        <div className="flex items-center">
-                            <img src={humidity_icon} alt="Humidity Icon" className="w-6 h-6" />
-                            <div className="ml-2">
-                                <div className="humidity-percent text-xl text-white">64%</div>
-                                <div className="text-white">Humidity</div>
-                            </div>
-                        </div>
-                        <div className="flex items-center ml-4">
-                            <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                            <div className="ml-2">
-                                <div className="wind-rate text-xl text-white">18 km/h</div>
-                                <div className="text-white">Wind Speed</div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div className="hourly-forecast bg-gray-400 rounded-md flex gap-4 w-[1100px] h-[350px] overflow-y-auto">
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[170px] h-[300px] mt-[25px] ml-[55px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src={wicon} alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card text-md font-bold text-white">15:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[170px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src={wicon} alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-18 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-18 text-md font-bold text-white">18:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-18 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-18 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[170px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src={wicon} alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-21 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-21 text-md font-bold text-white">21:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-21 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-21 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[170px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src={wicon} alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-00 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-00 text-md font-bold text-white">00:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-00 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-00 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[170px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src={wicon} alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-03 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-03 text-md font-bold text-white">03:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-03 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-03 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[170px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src={wicon} alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-06 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-06 text-md font-bold text-white">06:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-06 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-06 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[170px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src={wicon} alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-09 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-09 text-md font-bold text-white">09:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-09 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-09 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[170px] h-[300px] mt-[25px] ml-[5px] mr-[25px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src={wicon} alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-12 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-12 text-md font-bold text-white">12:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-12 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-12 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div className='flex items-center justify-center space-x-4'>
+            <input type="text" className='cityInput border border-gray-300 rounded-full px-4 py-2' placeholder='search' />
+            <div className="search-icon" onClick={search} style={{ cursor: 'pointer' }}>
+                <img src={search_icon} alt="Search Icon" className="w-6 h-6" />
             </div>
         </div>
     );
 }
-
-export default WeatherApp;
+}
+export default WeatherSearch;

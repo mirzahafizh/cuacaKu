@@ -124,3 +124,104 @@
   height: 20px; /* Atur tinggi ikon sesuai kebutuhan */
 }
   
+.konten-pertama{
+  display: flex;
+  gap: 40px;
+}
+
+.hourly-forecast{
+  margin-top: 50px;
+  width: 1100px;
+  height: 350px;
+  margin-right: 50px;
+  background-color: #626262;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+.card{
+  width: 150px;
+  margin-top: 25px;
+  margin-left: 25px;
+  height: 300px;
+  background: gray;
+}
+.weather-image-card{
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 35px;
+}
+
+.weather-temp-card{
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.weather-time{
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.data-container-card {
+  margin-top: 40px; /* Sesuaikan margin agar elemen tetap dalam border */
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.element-card {
+  margin: auto;
+  display: flex;
+  flex-direction: column; /* Mengubah arah tata letak ke vertikal */
+  align-items: center; /* Menyusun elemen secara tengah vertikal */
+  gap: 5px;
+  margin-top: -20px;
+}
+
+.data-card {
+  font-size: 18px; /* Ukuran font diperkecil */
+  font-weight: 400;
+  text-align: center; /* Teks diletakkan di tengah */
+}
+
+.text-card {
+  margin-top: 5px;
+  font-size: 10px; /* Ukuran font diperkecil */
+  font-weight: 400;
+  text-align: center; /* Teks diletakkan di tengah */
+}
+
+.icon-card {
+  margin-top: 20px;
+  width: 50px; /* Atur lebar ikon */
+  height: 50px;
+}
+
+.humidity-icon-card,
+.wind-icon-card {
+width: 25px; /* Atur lebar ikon sesuai kebutuhan */
+height: 25px; /* Atur tinggi ikon sesuai kebutuhan */
+}
+
+.humidity-percent-card,.wind-rate-card{
+  font-size: 10px; /* Ukuran font diperkecil */
+  font-weight: 400;
+  text-align: center;
+  margin-top: 5px;
+
+}

@@ -532,8 +532,8 @@ const WeatherApp = () => {
                     </div>
                     </div>
                 </div>
-                <div className="hourly-forecast bg-gray-400 rounded-md flex gap-4 w-[1100px] h-[350px] overflow-y-auto">
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[200px] h-[300px] mt-[25px] ml-[35px] '>
+                <div className="hourly-forecast bg-gray-400 rounded-md flex gap-4 w-[1100px] h-[350px] shadow-xl overflow-y-auto">
+                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-xl w-[200px] h-[300px] mt-[25px] ml-[35px] '>
                         <div className='weather-image-card mt-3 mb-1'>
                             <img src={wicon} alt="" className="w-16 h-16" />
                         </div>

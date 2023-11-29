@@ -5,8 +5,13 @@ import sunrise_icon from '../assets/2.png';
 import sunset_icon from '../assets/3.png';
 import search_icon from '../assets/9349901.png';
 import uv_icon from '../assets/UV1.png';
+import clear_icon from '../assets/clear.png';
+import cloud_icon from '../assets/cloud.png';
+import drizzle_icon from '../assets/drizzle.png';
 import humidity_icon from '../assets/humidity.png';
+import navigation_icon from '../assets/navigation 1.png';
 import rain_icon from '../assets/rain.png';
+import snow_icon from '../assets/snow.png';
 import tekanan_icon from '../assets/untitled design.png';
 import wind_icon from '../assets/wind.png';
 
@@ -14,7 +19,7 @@ const WeatherApp = () => {
 
 
     return (
-        <div className='container mx-auto p-6 bg-gray-500'>
+        <div className='container mx-auto p-6  bg-gradient-to-r from-neutral-700 to-stone-900'>
             <div className='flex items-center justify-center space-x-4'>
                 <input type="text" className='cityInput border border-gray-300 rounded-full px-4 py-2' placeholder='search' />
                 <div className="search-icon" onClick={() => { search() }} style={{ cursor: 'pointer' }}>
@@ -22,32 +27,15 @@ const WeatherApp = () => {
                 </div>
             </div>
             <div className="flex gap-4 mt-10 ml-[80px]">
-                <div className='flex flex-col items-center justify-center bg-gray-400 p-4 rounded-xl shadow-lg w-[510px] h-[330px]'>
-                    <div className='mb-4'>
-                        <img src='' alt="" className="w-16 h-16" />
-                    </div>
-                    <div className="weather-temp text-5xl font-bold text-white">24°C</div>
-                    <div className="weather-location text-xl text-white">London</div>
-                    <div className="flex flex-col items-center mt-4">
-                    <div className="flex items-center justify-center">
-                        <div className="flex items-center">
-                            <img src={humidity_icon} alt="Humidity Icon" className="w-6 h-6" />
-                            <div className="ml-2">
-                                <div className="humidity-percent text-xl text-white">64%</div>
-                                <div className="text-white">Humidity</div>
-                            </div>
-                        </div>
-                        <div className="flex items-center ml-4">
-                            <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                            <div className="ml-2">
-                                <div className="wind-rate text-xl text-white">18 km/h</div>
-                                <div className="text-white">Wind Speed</div>
-                            </div>
-                        </div>
-                    </div>
+            <div className="w-[510px] h-[330px] relative">
+                <div className="w-[510px] h-[330px] left-0 top-0 absolute bg-neutral-600 rounded-[30px]" />
+                    <div className="w-[296px] h-[228px] left-[107px] top-[54px] absolute">
+                        <div className="left-[13px] top-0 absolute text-white text-4xl font-bold font-['Poppins']">Karang Joang</div>
+                        <div className="w-[296px] left-0 top-[82px] absolute text-center text-white text-8xl font-bold font-['Poppins']">21:00</div>
+                        <div className="left-[61px] top-[198px] absolute text-white text-xl font-normal font-['Poppins']">Thursday, 23 Aug</div>
                     </div>
                 </div>
-                <div className="current-forecast w-[780px]  bg-gray-400 rounded-xl shadow-md flex ml-5">
+                <div className="current-forecast w-[780px]  bg-neutral-600 rounded-xl shadow-md flex ml-5">
                     <div className="main-current">
                         <div className="current-temp text-[50px] font-bold text-white ml-5 mt-3" >24°C</div>
                         <div className="feels-like text-[20px] font-bold text-white ml-5 flex"> Feels like:
@@ -104,182 +92,106 @@ const WeatherApp = () => {
                             </div>
                         </div>
                     </div>
-
-                    
-
                 </div>
             </div>
-            <div className="hourly-forecast bg-gray-400 rounded-md flex gap-4 w-[2000px] h-[350px] overflow-y-auto mt-5 w-auto">
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[200px] h-[300px] mt-[25px] ml-[35px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src='' alt="" className="w-16 h-16" />
+            <div className="konten-dua">
+                <div className="flex ">
+                <div className="w-[420px] h-[400px] relative mt-[20px] shadow-xl ml-[80px]">
+                    <div className="w-[420px] h-[400px] left-0 top-[16px] absolute bg-neutral-600 rounded-[30px]" />
+                    <div className="w-[420px] h-[400px] left-0 top-0 absolute">
+                        <div className="w-[370px] left-[30px] top-[308px] absolute">
+                            <div className="w-[163px] h-[50px] left-[207px] top-[24px] absolute text-white text-xl font-semibold font-['Poppins']">Tuesday, 5 Sep</div>
+                            <div className="w-[62px] h-[50px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">16°C</div>
+                            <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={rain_icon} />
                         </div>
-                        <div className="weather-temp-card-15 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-15 text-md font-bold text-white">00:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-15 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col w-[65px] items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-15 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
+                        <div className="w-[370px] h-[60px] left-[30px] top-[248px] absolute">
+                            <div className="w-[163px] h-[60px] left-[207px] top-[24px] absolute text-center text-white text-xl font-semibold font-['Poppins']">Monday, 4 Sep</div>
+                            <div className="w-[62px] h-[60px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">18°C</div>
+                            <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={cloud_icon} />
                         </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[200px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src='' alt="" className="w-16 h-16" />
+                        <div className="w-[370px] h-[60px] left-[30px] top-[188px] absolute">
+                            <div className="w-[163px] h-[60px] left-[207px] top-[24px] absolute text-center text-white text-xl font-semibold font-['Poppins']">Sunday, 3 Sep</div>
+                            <div className="w-[62px] h-[60px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">27°C</div>
+                            <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={clear_icon} />
                         </div>
-                        <div className="weather-temp-card-18 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-18 text-md font-bold text-white">03:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col  items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-18 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col  w-[65px] items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-18 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
+                        <div className="w-[370px] h-[60px] left-[30px] top-[128px] absolute">
+                            <div className="w-[163px] h-[60px] left-[207px] top-[24px] absolute text-center text-white text-xl font-semibold font-['Poppins']">Saturday, 2 Sep</div>
+                            <div className="w-[62px] h-[60px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">22°C</div>
+                            <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={drizzle_icon} />
                         </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[200px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src='' alt="" className="w-16 h-16" />
+                        <div className="w-[370px] h-[60px] left-[30px] top-[68px] absolute">
+                            <div className="w-[163px] h-[60px] left-[207px] top-[24px] absolute text-center text-white text-xl font-semibold font-['Poppins']">Friday, 1 Sep</div>
+                            <div className="w-[62px] h-[60px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">20°C</div>
+                            <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={snow_icon} />
                         </div>
-                        <div className="weather-temp-card-21 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-21 text-md font-bold text-white">06:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-21 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col w-[65px] items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-21 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[200px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src='' alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-0 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-0 text-md font-bold text-white">09:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-0 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col w-[65px] items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-0 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[200px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src='' alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-3 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-3 text-md font-bold text-white">12:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-3 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col w-[65px] items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-3 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[200px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src='' alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-6 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-6 text-md font-bold text-white">15:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-6 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col w-[65px] items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-6 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[200px] h-[300px] mt-[25px] ml-[5px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src='' alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-9 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-9 text-md font-bold text-white">18:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-9 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col w-[65px] items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-9 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl shadow-lg w-[200px] h-[300px] mt-[25px] ml-[5px] mr-[25px]'>
-                        <div className='weather-image-card mt-3 mb-1'>
-                            <img src='' alt="" className="w-16 h-16" />
-                        </div>
-                        <div className="weather-temp-card-12 text-3xl font-bold text-white">24°C</div>
-                        <div className="weather-time-card-12 text-md font-bold text-white">21:00</div>
-                        <div className="flex flex-col items-center mt-4">
-                            <div className="flex items-center justify-center">
-                                <div className="flex flex-col items-center text-center">
-                                    <img src={humidity_icon} alt="Humidity Icon" className="w-[20px] h-[25px]" />
-                                    <div className="humidity-percent-card-12 mt-2 text-xs text-white">64%</div>
-                                    <div className="text-white text-[9px]">Humidity</div>
-                                </div>
-                                <div className="flex flex-col w-[65px] items-center ml-4 text-center">
-                                    <img src={wind_icon} alt="Wind Icon" className="w-6 h-6" />
-                                    <div className="wind-rate-card-12 mt-2 text-xs text-white">18 km/h</div>
-                                    <div className="text-white text-[9px]">Wind Speed</div>
-                                </div>
-                            </div>
-                        </div>
+                        <div className="w-72 h-[50px] left-[63px] top-[18px] absolute text-center text-white text-[32px] font-bold font-['Poppins'] mt-2">5 Days Forecast:</div>
                     </div>
                 </div>
+                <div className="w-[870px] h-[400px] relative bg-neutral-600 rounded-[30px] shadow-xl ml-[50px] mt-[40px]">
+                    <div className="w-[130px] h-[270px] left-[660px] top-[80px] absolute ">
+                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
+                        <div className="w-[69px] h-[95px] left-[33px] top-[157px] absolute">
+                            <div className="left-0 top-[65px] absolute text-white text-xl font-bold font-['Poppins']">3km/h</div>
+                            <img className="w-[55px] h-[55px] left-[4px] top-0 absolute" src={navigation_icon} />
+                        </div>
+                        <div className="w-20 h-[111px] left-[28px] top-[42px] absolute">
+                            <div className="left-[12px] top-[81px] absolute text-white text-xl font-bold font-['Poppins']">22°C</div>
+                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
+                        </div>
+                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">00:00</div>
+                    </div>
+                    <div className="w-[130px] h-[270px] left-[515px] top-[80px] absolute">
+                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
+                        <div className="w-[75.13px] h-[105.07px] left-[29.93px] top-[146.93px] absolute">
+                            <div className="left-[3.07px] top-[75.07px] absolute text-white text-xl font-bold font-['Poppins']">3km/h</div>
+                            <img className="w-[55px] h-[55px] left-[27.50px] top-0 absolute origin-top-left rotate-[30deg]" src={navigation_icon} />
+                        </div>
+                        <div className="w-20 h-[111px] left-[25px] top-[42px] absolute">
+                            <div className="left-[15px] top-[81px] absolute text-white text-xl font-bold font-['Poppins']">25°C</div>
+                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
+                        </div>
+                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">21:00</div>
+                    </div>
+                    <div className="w-[130px] h-[270px] left-[370px] top-[80px] absolute">
+                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
+                        <div className="w-[68px] h-[95px] left-[34px] top-[157px] absolute">
+                            <div className="left-0 top-[65px] absolute text-white text-xl font-bold font-['Poppins']">2km/h</div>
+                            <img className="w-[55px] h-[55px] left-[3px] top-0 absolute" src={navigation_icon} />
+                        </div>
+                        <div className="w-20 h-[111px] left-[25px] top-[42px] absolute">
+                            <div className="left-[16px] top-[81px] absolute text-white text-xl font-bold font-['Poppins']">27°C</div>
+                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
+                        </div>
+                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">18:00</div>
+                    </div>
+                    <div className="w-[130px] h-[270px] left-[225px] top-[80px] absolute">
+                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
+                        <div className="w-[83px] h-[105px] left-[18px] top-[147px] absolute">
+                            <div className="left-[15px] top-[75px] absolute text-white text-xl font-bold font-['Poppins']">2km/h</div>
+                            <img className="w-[55px] h-[55px] left-0 top-[27.50px] absolute origin-top-left rotate-[-30deg]" src={navigation_icon} />
+                        </div>
+                        <div className="w-20 h-[111px] left-[25px] top-[42px] absolute">
+                            <div className="left-[15px] top-[81px] absolute text-white text-xl font-bold font-['Poppins']">27°C</div>
+                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
+                        </div>
+                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">15:00</div>
+                    </div>
+                    <div className="w-[130px] h-[270px] left-[80px] top-[80px] absolute">
+                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
+                        <div className="w-[69px] h-[95px] left-[33px] top-[157px] absolute">
+                            <div className="left-0 top-[65px] absolute text-white text-xl font-bold font-['Poppins']">3km/h</div>
+                            <img className="w-[55px] h-[55px] left-[5px] top-0 absolute" src={navigation_icon} />
+                        </div>
+                        <div className="w-20 h-[110px] left-[25px] top-[42px] absolute">
+                            <div className="left-[15px] top-[80px] absolute text-white text-xl font-bold font-['Poppins']">26°C</div>
+                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
+                        </div>
+                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">12:00</div>
+                    </div>
+                    <div className="left-[306px] top-[13px] absolute text-white text-[32px] font-bold font-['Poppins']">Hourly Forecast:</div>
+                </div>
+                </div>
+            </div>
         </div>
     );
 }

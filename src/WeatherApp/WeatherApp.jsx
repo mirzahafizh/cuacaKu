@@ -280,9 +280,9 @@ const WeatherApp = () => {
                 <img src={search_icon} alt="Search Icon" className="w-6 h-6 text-white" />
             </div>
         </div>
-            <div className="flex gap-4 mt-10 ml-[80px]">
-            <div className="w-[510px] h-[330px] relative flex flex-col items-center justify-center">
-                <div className="w-[510px] h-[330px] left-0 top-0 absolute bg-neutral-600 rounded-[30px]" />
+            <div className="flex gap-4 mt-10 ml-[80px] ">
+            <div className="w-[510px] h-[330px] relative flex flex-col items-center justify-center ">
+                <div className="w-[510px] h-[330px] left-0 top-0 absolute bg-neutral-600 rounded-[30px] shadow" />
                 <div className="w-[296px] h-[228px] left-[107px] top-[54px] absolute flex flex-col items-center justify-center">
                     <div className="kota text-white text-4xl font-bold  font-['Poppins']">{currentWeather.city}</div>
                     <div className="time text-center text-white text-8xl mt-2 font-bold font-['Poppins']">{currentWeather.time}</div>

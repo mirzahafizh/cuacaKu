@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import sunrise_icon from '../assets/2.png';
 import sunset_icon from '../assets/3.png';
@@ -197,15 +197,28 @@ const WeatherApp = () => {
     const [hourlyForecast, setHourlyForecast] = useState(hourlyForecastDataJakarta);
     const [fiveDaysForecast, setFiveDaysForecast] = useState(dummy5DaysForecastJakarta)
 
+    
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
     const handleInputChange = (e) => {
         setSearchTerm(e.target.value);
     };
+
+    useEffect(() => {
+        // Reset the search term when currentWeather changes
+        setSearchTerm('');
+    }, [currentWeather]);
+
     
     const handleSearch = () => {
         // Implement your logic to filter the data based on the search term
         // For simplicity, let's assume the search term should match the city name exactly
         const searchedCity = searchTerm.toLowerCase();
-        
+    
         // Use dummy data for search, replace it with actual data fetching logic
         switch (searchedCity) {
             case 'jakarta':
@@ -246,24 +259,27 @@ const WeatherApp = () => {
                 setCurrentWeather(null);
                 break;
         }
+
+
     };
 
 
 
     return (
         <div className='container mx-auto p-6 w-auto bg-gradient-to-r from-neutral-700 to-stone-900 '>
-            <div className="flex items-center justify-center space-x-4">
-                <input
+        <div className="flex items-center justify-center space-x-4">
+            <input
                 type="text"
                 className="cityInput border border-gray-300 rounded-full px-4 py-2"
                 placeholder="search"
                 value={searchTerm}
                 onChange={handleInputChange}
-                />
-                <div className="search-icon" onClick={() => handleSearch(searchTerm)} style={{ cursor: 'pointer' }}>
+                onKeyPress={handleKeyPress}  // Add this line to handle 'Enter' key press
+            />
+            <div className="search-icon" onClick={() => handleSearch(searchTerm)} style={{ cursor: 'pointer' }}>
                 <img src={search_icon} alt="Search Icon" className="w-6 h-6 text-white" />
-                </div>
             </div>
+        </div>
             <div className="flex gap-4 mt-10 ml-[80px]">
             <div className="w-[510px] h-[330px] relative flex flex-col items-center justify-center">
                 <div className="w-[510px] h-[330px] left-0 top-0 absolute bg-neutral-600 rounded-[30px]" />

@@ -14,20 +14,33 @@ import rain_icon from '../assets/rain.png';
 import snow_icon from '../assets/snow.png';
 import tekanan_icon from '../assets/untitled design.png';
 import wind_icon from '../assets/wind.png';
+import run_icon from '../assets/run.png';
+import uv1_icon from '../assets/matahari.png';
+import pakaian_icon from '../assets/pakaian.png';
+import temp_icon from '../assets/temp.png';
+import payung_icon from '../assets/payung.png';
 
 const WeatherApp = () => {
-
-
-    return (
-        <div className='container mx-auto p-6  bg-gradient-to-r from-neutral-700 to-stone-900'>
-            <div className='flex items-center justify-center space-x-4'>
-                <input type="text" className='cityInput border border-gray-300 rounded-full px-4 py-2' placeholder='search' />
-                <div className="search-icon" onClick={() => { search() }} style={{ cursor: 'pointer' }}>
-                    <img src={search_icon} alt="Search Icon" className="w-6 h-6 text-white" />
-                </div>
-            </div>
-            <div className="flex gap-4 mt-10 ml-[80px]">
-            <div className="w-[510px] h-[330px] relative">
+  return (
+    <div class='container mx-auto p-6 bg-gradient-to-r from-neutral-700 to-stone-900 min-h-screen bg-cover'>
+      <div className='flex flex-col md:flex-row items-center justify-center space-x-4'>
+        <input
+          type='text'
+          className='cityInput border border-gray-300 rounded-full px-4 py-2 mb-4 md:mb-0'
+          placeholder='search'
+        />
+        <div
+          className='search-icon'
+          onClick={() => {
+            search();
+          }}
+          style={{ cursor: 'pointer' }}
+        >
+          <img src={search_icon} alt='Search Icon' className='w-6 h-6 text-white' />
+        </div>
+      </div>
+      <div className='flex gap-4 mt-10 ml-[80px]'>
+      <div className="w-[510px] h-[330px] relative">
                 <div className="w-[510px] h-[330px] left-0 top-0 absolute bg-neutral-600 rounded-[30px]" />
                     <div className="w-[296px] h-[228px] left-[107px] top-[54px] absolute">
                         <div className="left-[13px] top-0 absolute text-white text-4xl font-bold font-['Poppins']">Karang Joang</div>
@@ -95,7 +108,7 @@ const WeatherApp = () => {
                 </div>
             </div>
             <div className="konten-dua">
-                <div className="flex ">
+                <div className="flex">
                 <div className="w-[420px] h-[400px] relative mt-[20px] shadow-xl ml-[80px]">
                     <div className="w-[420px] h-[400px] left-0 top-[16px] absolute bg-neutral-600 rounded-[30px]" />
                     <div className="w-[420px] h-[400px] left-0 top-0 absolute">
@@ -191,9 +204,160 @@ const WeatherApp = () => {
                     <div className="left-[306px] top-[13px] absolute text-white text-[32px] font-bold font-['Poppins']">Hourly Forecast:</div>
                 </div>
                 </div>
+        </div>
+        <div className='flex mt-5'>
+        <div className="name-content">
+            <div className="w-[200px] h-[40px] left-[20px] relative mt-[20px] shadow-xl ml-[80px] flex items-center text-center">
+                <div className="w-[200px] h-[40px] left-[20px] top-[16px] absolute bg-fuchsia-950 bg-opacity-40 rounded-[11px]" />
+                    <div className="absolute inset-y-0 left-[20px] top-[16px] w-full h-full flex items-center justify-center text-white font-bold text-sm">
+                        Parkiran Cuaca
+                    </div>
+                </div>
             </div>
         </div>
-    );
-}
+        <div className="konten-tiga">
+                    <div className="flex ">
+                    <div className="w-[1340px] h-[400px] relative mt-[20px] shadow-xl ml-[80px]">
+                        <div className="w-[1340px] h-[400px] left-0 top-[16px] absolute bg-neutral-600 rounded-[30px]" />
+                        <div className="w-[1340px] h-[400px] left-0 top-0 absolute">
+                            <div className="w-[370px] left-[30px] top-[308px] absolute">
+                                <div className="w-[163px] h-[50px] left-[207px] top-[24px] absolute text-white text-xl font-semibold font-['Poppins']">Tuesday, 5 Sep</div>
+                                <div className="w-[62px] h-[50px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">16°C</div>
+                                <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={rain_icon} />
+                            </div>
+                            <div className="w-[370px] h-[60px] left-[30px] top-[248px] absolute">
+                                <div className="w-[163px] h-[60px] left-[207px] top-[24px] absolute text-center text-white text-xl font-semibold font-['Poppins']">Monday, 4 Sep</div>
+                                <div className="w-[62px] h-[60px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">18°C</div>
+                                <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={cloud_icon} />
+                            </div>
+                            <div className="w-[370px] h-[60px] left-[30px] top-[188px] absolute">
+                                <div className="w-[163px] h-[60px] left-[207px] top-[24px] absolute text-center text-white text-xl font-semibold font-['Poppins']">Sunday, 3 Sep</div>
+                                <div className="w-[62px] h-[60px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">27°C</div>
+                                <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={clear_icon} />
+                            </div>
+                            <div className="w-[370px] h-[60px] left-[30px] top-[128px] absolute">
+                                <div className="w-[163px] h-[60px] left-[207px] top-[24px] absolute text-center text-white text-xl font-semibold font-['Poppins']">Saturday, 2 Sep</div>
+                                <div className="w-[62px] h-[60px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">22°C</div>
+                                <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={drizzle_icon} />
+                            </div>
+                            <div className="w-[370px] h-[60px] left-[30px] top-[68px] absolute">
+                                <div className="w-[163px] h-[60px] left-[207px] top-[24px] absolute text-center text-white text-xl font-semibold font-['Poppins']">Friday, 1 Sep</div>
+                                <div className="w-[62px] h-[60px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">20°C</div>
+                                <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={snow_icon} />
+                            </div>
+                            <div className="w-72 h-[50px] left-[63px] top-[18px] absolute text-center text-white text-[32px] font-bold font-['Poppins'] mt-2">5 Days Forecast:</div>
+                        </div>
+                    </div>
+                    </div>
+        </div>
+        <div className='flex mt-5'>
+        <div className="name-content">
+            <div className="w-[270px] h-[40px] left-[20px] relative mt-[20px] shadow-xl ml-[80px] flex items-center text-center">
+                <div className="w-[270px] h-[40px] left-[20px] top-[16px] absolute bg-fuchsia-950 bg-opacity-40 rounded-[11px]" />
+                    <div className="absolute inset-y-0 left-[20px] top-[16px] w-full h-full flex items-center justify-center text-white font-bold text-sm">
+                        Kesehatan dan Keselamatan
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="konten-empat">
+        <div className="flex">
+            <div className="w-[1340px] h-[850px] relative mt-[20px] shadow-xl ml-[80px]">
+                <div className="w-[1340px] h-[850px] left-0 top-[16px] absolute bg-neutral-600 rounded-[30px]">
+                    {/* Tombol */}
+                    <button
+                        className="w-[300px] h-[40px] absolute right-[20px] top-[20px] bg-fuchsia-950 bg-opacity-40 text-white rounded-3xl font-semibold"
+                        onClick={() => {
+                            // Logika yang dijalankan saat tombol diklik
+                            console.log('Button Clicked!');
+                        }}
+                    >
+                        Lihat prakiraan lengkapnya<span className="ml-2">&#62;</span>
+                    </button>
+
+                    <div className='flex mt-10'>
+                        {/* Tabel List */}
+                        <div className="w-[90%] mt-10 ml-4 mx-auto">
+                            {/* List 1 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w-10 h-10 mr-6" src={payung_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Payung</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Diperlukan</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-yellow-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 2 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w-10 h-10 mr-6" src={run_icon} alt="run Icon" />
+                                    <div className="text-white font-poppins text-xl">Luar Ruangan</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Sangat Kurang</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-red-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 3 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w-10 h-10 mr-6" src={uv1_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Indeks UV</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Ekstrem</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-red-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 4 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w-10 h-10 mr-6" src={pakaian_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Pakaian</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Celana Pendek</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-yellow-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 5 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w- h-10 mr-10 ml-3" src={temp_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Sengatan Panas</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Bahaya</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-red-400"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 6 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w- h-10 mr-10 ml-3" src={temp_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Angin Dingin</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Aman</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-green-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  );
+};
 
 export default WeatherApp;

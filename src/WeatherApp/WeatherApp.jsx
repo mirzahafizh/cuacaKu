@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 import sunrise_icon from '../assets/2.png';
 import sunset_icon from '../assets/3.png';
@@ -9,7 +9,7 @@ import clear_icon from '../assets/clear.png';
 import cloud_icon from '../assets/cloud.png';
 import drizzle_icon from '../assets/drizzle.png';
 import humidity_icon from '../assets/humidity.png';
-import navigation_icon from '../assets/navigation 1.png';
+import navigation_icon from '../assets/navigation.png';
 import rain_icon from '../assets/rain.png';
 import snow_icon from '../assets/snow.png';
 import tekanan_icon from '../assets/untitled design.png';
@@ -17,13 +17,49 @@ import wind_icon from '../assets/wind.png';
 
 const WeatherApp = () => {
 
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
+    const searchCityData = [
+        { id: 1, name: 'Jakarta', country: 'Indonesia' },
+        { id: 2, name: 'New York', country: 'United States' },
+        { id: 3, name: 'London', country: 'United Kingdom' },
+        { id: 4, name: 'Tokyo', country: 'Japan' },
+        { id: 5, name: 'Sydney', country: 'Australia' },
+    ];
+    
+    const handleSearch = (searchTerm) => {
+        const results = searchCityData.filter((city) =>
+        city.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setSearchResults(results);
+    };
+    
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value);
+        handleSearch(e.target.value);
+    };
+    
+    const hourlyForecastData = [
+        { time: '00:00', temperature: '22°C', windSpeed: '3km/h', humidity: '80%' },
+        { time: '03:00', temperature: '21°C', windSpeed: '4km/h', humidity: '78%' },
+        { time: '06:00', temperature: '20°C', windSpeed: '5km/h', humidity: '75%' },
+        { time: '09:00', temperature: '23°C', windSpeed: '6km/h', humidity: '82%' },
+        { time: '12:00', temperature: '25°C', windSpeed: '7km/h', humidity: '85%' },
+    ];
 
     return (
         <div className='container mx-auto p-6  bg-gradient-to-r from-neutral-700 to-stone-900'>
-            <div className='flex items-center justify-center space-x-4'>
-                <input type="text" className='cityInput border border-gray-300 rounded-full px-4 py-2' placeholder='search' />
-                <div className="search-icon" onClick={() => { search() }} style={{ cursor: 'pointer' }}>
-                    <img src={search_icon} alt="Search Icon" className="w-6 h-6 text-white" />
+            <div className="flex items-center justify-center space-x-4">
+                <input
+                type="text"
+                className="cityInput border border-gray-300 rounded-full px-4 py-2"
+                placeholder="search"
+                value={searchTerm}
+                onChange={handleInputChange}
+                />
+                <div className="search-icon" onClick={() => { /* Handle search logic */ }} style={{ cursor: 'pointer' }}>
+                <img src={search_icon} alt="Search Icon" className="w-6 h-6 text-white" />
                 </div>
             </div>
             <div className="flex gap-4 mt-10 ml-[80px]">
@@ -128,71 +164,23 @@ const WeatherApp = () => {
                     </div>
                 </div>
                 <div className="w-[870px] h-[400px] relative bg-neutral-600 rounded-[30px] shadow-xl ml-[50px] mt-[40px]">
-                    <div className="w-[130px] h-[270px] left-[660px] top-[80px] absolute ">
-                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
-                        <div className="w-[69px] h-[95px] left-[33px] top-[157px] absolute">
-                            <div className="left-0 top-[65px] absolute text-white text-xl font-bold font-['Poppins']">3km/h</div>
-                            <img className="w-[55px] h-[55px] left-[4px] top-0 absolute" src={navigation_icon} />
-                        </div>
-                        <div className="w-20 h-[111px] left-[28px] top-[42px] absolute">
-                            <div className="left-[12px] top-[81px] absolute text-white text-xl font-bold font-['Poppins']">22°C</div>
-                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
-                        </div>
-                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">00:00</div>
-                    </div>
-                    <div className="w-[130px] h-[270px] left-[515px] top-[80px] absolute">
-                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
-                        <div className="w-[75.13px] h-[105.07px] left-[29.93px] top-[146.93px] absolute">
-                            <div className="left-[3.07px] top-[75.07px] absolute text-white text-xl font-bold font-['Poppins']">3km/h</div>
-                            <img className="w-[55px] h-[55px] left-[27.50px] top-0 absolute origin-top-left rotate-[30deg]" src={navigation_icon} />
-                        </div>
-                        <div className="w-20 h-[111px] left-[25px] top-[42px] absolute">
-                            <div className="left-[15px] top-[81px] absolute text-white text-xl font-bold font-['Poppins']">25°C</div>
-                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
-                        </div>
-                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">21:00</div>
-                    </div>
-                    <div className="w-[130px] h-[270px] left-[370px] top-[80px] absolute">
-                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
-                        <div className="w-[68px] h-[95px] left-[34px] top-[157px] absolute">
-                            <div className="left-0 top-[65px] absolute text-white text-xl font-bold font-['Poppins']">2km/h</div>
-                            <img className="w-[55px] h-[55px] left-[3px] top-0 absolute" src={navigation_icon} />
-                        </div>
-                        <div className="w-20 h-[111px] left-[25px] top-[42px] absolute">
-                            <div className="left-[16px] top-[81px] absolute text-white text-xl font-bold font-['Poppins']">27°C</div>
-                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
-                        </div>
-                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">18:00</div>
-                    </div>
-                    <div className="w-[130px] h-[270px] left-[225px] top-[80px] absolute">
-                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
-                        <div className="w-[83px] h-[105px] left-[18px] top-[147px] absolute">
-                            <div className="left-[15px] top-[75px] absolute text-white text-xl font-bold font-['Poppins']">2km/h</div>
-                            <img className="w-[55px] h-[55px] left-0 top-[27.50px] absolute origin-top-left rotate-[-30deg]" src={navigation_icon} />
-                        </div>
-                        <div className="w-20 h-[111px] left-[25px] top-[42px] absolute">
-                            <div className="left-[15px] top-[81px] absolute text-white text-xl font-bold font-['Poppins']">27°C</div>
-                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
-                        </div>
-                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">15:00</div>
-                    </div>
-                    <div className="w-[130px] h-[270px] left-[80px] top-[80px] absolute">
-                        <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
-                        <div className="w-[69px] h-[95px] left-[33px] top-[157px] absolute">
-                            <div className="left-0 top-[65px] absolute text-white text-xl font-bold font-['Poppins']">3km/h</div>
-                            <img className="w-[55px] h-[55px] left-[5px] top-0 absolute" src={navigation_icon} />
-                        </div>
-                        <div className="w-20 h-[110px] left-[25px] top-[42px] absolute">
-                            <div className="left-[15px] top-[80px] absolute text-white text-xl font-bold font-['Poppins']">26°C</div>
-                            <img className="w-20 h-20 left-0 top-0 absolute" src={clear_icon} />
-                        </div>
-                        <div className="left-[31px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">12:00</div>
-                    </div>
+                    {hourlyForecastData.map((data, index) => (
+                        <div key={index} className={`w-[130px] h-[270px] left-[${80 + index * 145}px] top-[80px] absolute`}>
+                            <div className="w-[130px] h-[270px] left-0 top-0 absolute bg-neutral-700 rounded-[40px]" />
+                            <div className="w-20 h-[111px] left-[28px] top-[42px] absolute">
+                                <div className="left-[12px] top-[81px] absolute text-white text-xl font-bold font-['Poppins']">{data.temperature}</div>
+                                <img src={clear_icon} alt="" className='ml-[-3px]' />
+                                <img src={navigation_icon} alt="" className="mt-7 ml-[10px]" />
+                            </div>
+                            <div className="left-[35px] top-[13px] absolute text-white text-2xl font-bold font-['Poppins']">{data.time}</div>
+                            <div className="left-[35px] top-[180px] mt-[34px] absolute text-white text-xl font-bold font-['Poppins']">{data.windSpeed}</div>
+                            </div>
+                    ))}
                     <div className="left-[306px] top-[13px] absolute text-white text-[32px] font-bold font-['Poppins']">Hourly Forecast:</div>
                 </div>
                 </div>
+                </div>
             </div>
-        </div>
     );
 }
 

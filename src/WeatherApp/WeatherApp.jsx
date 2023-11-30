@@ -14,6 +14,12 @@ import rain_icon from '../assets/rain.png';
 import snow_icon from '../assets/snow.png';
 import tekanan_icon from '../assets/untitled design.png';
 import wind_icon from '../assets/wind.png';
+import run_icon from '../assets/run.png';
+import uv1_icon from '../assets/matahari.png';
+import pakaian_icon from '../assets/pakaian.png';
+import temp_icon from '../assets/temp.png';
+import payung_icon from '../assets/payung.png';
+import rain_night_icon from '../assets/rainNaight.png';
 
 const WeatherApp = () => {
 
@@ -404,6 +410,203 @@ const WeatherApp = () => {
             </div>
             </div>
             </div>
+            <div className='flex mt-5 mb-3'>
+        <div className="name-content">
+            <div className="w-[250px] h-[40px] left-[20px] relative mt-[20px] shadow-xl ml-[80px] flex items-center text-center">
+                <div className="w-[250px] h-[40px] left-[20px] top-[16px] absolute bg-fuchsia-950 bg-opacity-40 rounded-[11px]" />
+                    <div className="absolute inset-y-0 left-[20px] top-[16px] w-full h-full flex items-center justify-center text-white font-bold text-xl">
+                        Prakiraan Cuaca
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="konten-tiga">
+                    <div className="flex ">
+                    <div className="w-[1340px] h-[400px] relative mt-[20px] shadow-xl ml-[80px]">
+                    <div className="w-[1340px] h-[400px] left-0 top-0 absolute bg-neutral-600 rounded-[30px]">
+                        {/* Row Pertama */}
+                        <div className="w-[200px] h-[93px] ml-44 mt-24 mb-4">
+                            <img className="w-[90x] h-[90px] absolute" src={rain_icon} alt="Rain Icon" />
+                            <div className="ml-4">
+                            <div className="text-right text-white text-2xl font-semibold font-['Poppins']">28°C</div>
+                            <div className="text-right text-white opacity-50 text-2xl font-semibold font-['Poppins']">26°C</div>
+                            </div>
+                        </div>
+
+                        {/* Row Kedua */}
+                        <div className="w-[250px] h-[80px] left-[100px] top-[5px] mb-2 ml-36 flex items-center">
+                        <div className="ml-4 ">
+                            <div className="text-center text-white text-xl font-semibold font-['Poppins']">Humidity</div>
+                            <div className="text-center text-white text-2xl font-semibold font-['Poppins']">75%</div>
+                        </div>
+                        <div className="ml-14">
+                            <div className="text-center text-white text-xl font-semibold font-['Poppins']">Visibility</div>
+                            <div className="text-center text-white text-2xl font-semibold font-['Poppins']">10 km</div>
+                        </div>
+                        </div>
+                        {/* Row Ketiga */}
+                        <div className="w-[300px] h-[80px] left-[100px] top-[5px] ml-32 flex items-center ">
+                        <div className="ml-4">
+                            <div className="text-center text-white text-xl font-semibold font-['Poppins']">Air Pressure</div>
+                            <div className="text-center text-white text-2xl font-semibold font-['Poppins']">1015 hPa</div>
+                        </div>
+                        {/* Wind */}
+                        <div className="ml-14">
+                            <div className="text-center text-white text-xl font-semibold font-['Poppins']">Wind</div>
+                            <div className="text-center text-white text-2xl font-semibold font-['Poppins']">15 km/h</div>
+                        </div>
+                        </div>
+                        </div>
+                        {/* Tulisan "5 Days Forecast:" di atas */}
+                        <div className="w-72 left-[63px] top-[18px] absolute text-center text-white text-[32px] font-bold font-['Poppins'] mt-2">30 Kamis | Day</div>
+                        
+                        
+                        
+                        <div className="w-[500px] h-[400px] left-[750px] top-0 absolute">
+                            {/* Row Pertama */}
+                        <div className="w-[200px] h-[93px] ml-32 mt-24 mb-4">
+                            <img className="w-[90x] h-[90px] absolute" src={rain_night_icon} alt="Rain Night Icon" />
+                            <div className="ml-4">
+                            <div className="text-right text-white text-2xl font-semibold font-['Poppins']">28°C</div>
+                            <div className="text-right text-white opacity-50 text-2xl font-semibold font-['Poppins']">26°C</div>
+                            </div>
+                        </div>
+
+                        {/* Row Kedua */}
+                        <div className="w-[250px] h-[80px] left-[100px] top-[5px] mb-2 ml-28 flex items-center">
+                        <div className="ml-4 ">
+                            <div className="text-center text-white text-xl font-semibold font-['Poppins']">Humidity</div>
+                            <div className="text-center text-white text-2xl font-semibold font-['Poppins']">75%</div>
+                        </div>
+                        <div className="ml-14">
+                            <div className="text-center text-white text-xl font-semibold font-['Poppins']">Visibility</div>
+                            <div className="text-center text-white text-2xl font-semibold font-['Poppins']">10 km</div>
+                        </div>
+                        </div>
+                        {/* Row Ketiga */}
+                        <div className="w-[300px] h-[80px] left-[100px] top-[5px] ml-24 flex items-center ">
+                        <div className="ml-4">
+                            <div className="text-center text-white text-xl font-semibold font-['Poppins']">Air Pressure</div>
+                            <div className="text-center text-white text-2xl font-semibold font-['Poppins']">1015 hPa</div>
+                        </div>
+                        {/* Wind */}
+                        <div className="ml-14">
+                            <div className="text-center text-white text-xl font-semibold font-['Poppins']">Wind</div>
+                            <div className="text-center text-white text-2xl font-semibold font-['Poppins']">15 km/h</div>
+                        </div>
+                        </div>
+                        {/* Tulisan "5 Days Forecast:" di atas */}
+                        <div className="w-72  top-[18px] absolute text-center text-white text-[32px] font-bold font-['Poppins'] mt-2">30 Kamis | Night</div>
+                        </div>
+                    </div>
+                    </div>
+        </div>
+        <div className='flex mt-5'>
+        <div className="name-content">
+            <div className="w-[350px] h-[40px] left-[20px] relative mt-[20px] shadow-xl ml-[80px] flex items-center text-center">
+                <div className="w-[350px] h-[40px] left-[20px] top-[16px] absolute bg-fuchsia-950 bg-opacity-40 rounded-[11px]" />
+                    <div className="absolute inset-y-0 left-[20px] top-[16px] w-full h-full flex items-center justify-center text-white font-bold text-xl">
+                        Kesehatan dan Keselamatan
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="konten-empat">
+        <div className="flex">
+            <div className="w-[1340px] h-[850px] relative mt-[20px] mb-24 shadow-xl ml-[80px]">
+                <div className="w-[1340px] h-[850px] left-0 top-[16px] absolute bg-neutral-600 rounded-[30px]">
+                    {/* Tombol */}
+                    <button
+                        className="w-[300px] h-[40px] absolute right-[20px] top-[20px] bg-fuchsia-950 bg-opacity-40 text-white rounded-3xl font-semibold"
+                        onClick={() => {
+                            // Logika yang dijalankan saat tombol diklik
+                            console.log('Button Clicked!');
+                        }}
+                    >
+                        Lihat prakiraan lengkapnya<span className="ml-2">&#62;</span>
+                    </button>
+
+                    <div className='flex mt-10'>
+                        {/* Tabel List */}
+                        <div className="w-[90%] mt-10 ml-4 mx-auto">
+                            {/* List 1 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w-10 h-10 mr-6" src={payung_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Payung</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Diperlukan</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-yellow-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 2 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w-10 h-10 mr-6" src={run_icon} alt="run Icon" />
+                                    <div className="text-white font-poppins text-xl">Luar Ruangan</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Sangat Kurang</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-red-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 3 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w-10 h-10 mr-6" src={uv1_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Indeks UV</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Ekstrem</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-red-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 4 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w-10 h-10 mr-6" src={pakaian_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Pakaian</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Celana Pendek</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-yellow-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 5 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w- h-10 mr-10 ml-3" src={temp_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Sengatan Panas</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Bahaya</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-red-400"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+
+                            {/* List 6 */}
+                            <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
+                                <div className="flex items-center mb-2">
+                                    <img className="w- h-10 mr-10 ml-3" src={temp_icon} alt="payung Icon" />
+                                    <div className="text-white font-poppins text-xl">Angin Dingin</div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="mr-4 text-white font-poppins text-xl">Aman</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="rounded-full h-4 w-4 mr-2 bg-green-500"></div> {/* Bulatan hijau */}
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         </div>
     );
 }

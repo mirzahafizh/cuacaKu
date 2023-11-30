@@ -1,25 +1,25 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
 
-import sunrise_icon from '../assets/2.png';
-import sunset_icon from '../assets/3.png';
 import search_icon from '../assets/9349901.png';
 import uv_icon from '../assets/UV1.png';
 import clear_icon from '../assets/clear.png';
 import cloud_icon from '../assets/cloud.png';
 import drizzle_icon from '../assets/drizzle.png';
 import humidity_icon from '../assets/humidity.png';
+import uv1_icon from '../assets/matahari.png';
 import navigation_icon from '../assets/navigation.png';
+import pakaian_icon from '../assets/pakaian.png';
+import payung_icon from '../assets/payung.png';
 import rain_icon from '../assets/rain.png';
+import rain_night_icon from '../assets/rainNaight.png';
+import run_icon from '../assets/run.png';
 import snow_icon from '../assets/snow.png';
+import sunrise_icon from '../assets/sunrise-white.png';
+import sunset_icon from '../assets/sunset-white.png';
+import temp_icon from '../assets/temp.png';
 import tekanan_icon from '../assets/untitled design.png';
 import wind_icon from '../assets/wind.png';
-import run_icon from '../assets/run.png';
-import uv1_icon from '../assets/matahari.png';
-import pakaian_icon from '../assets/pakaian.png';
-import temp_icon from '../assets/temp.png';
-import payung_icon from '../assets/payung.png';
-import rain_night_icon from '../assets/rainNaight.png';
 
 const WeatherApp = () => {
 
@@ -359,21 +359,36 @@ const WeatherApp = () => {
                 <div className="flex ">
                 <div className="w-[420px] h-[400px] relative mt-[20px] shadow-xl ml-[80px]">
                     <div className="w-[420px] h-[400px] left-0 top-[16px] absolute bg-neutral-600 rounded-[30px]" />
-                    <div className="w-[420px] h-[400px] left-0 top-0 absolute">
-                        {currentWeather && currentWeather.dummy5DaysForecast.map((forecast, index) => (
-                            <div key={index} className={`w-[370px] left-[30px] top-[${308 - (60 * index)}px] absolute`}>
-                                <div className="w-[163px] h-[50px] left-[207px] top-[24px] absolute text-white text-xl font-semibold font-['Poppins']">
-                                    {forecast.date}
-                                </div>
-                                <div className="w-[62px] h-[50px] left-[103px] top-[24px] absolute text-center text-white text-2xl font-semibold font-['Poppins']">
-                                    {forecast.temperature}
-                                </div>
-                                <img className="w-[60px] h-[60px] left-0 top-[24px] absolute" src={forecast.weatherIcon} alt="Weather Icon" />
-                            </div>
-                        ))}
-                        <div className="w-72 h-[50px] left-[63px] top-[18px] absolute text-center text-white text-[32px] font-bold font-['Poppins'] mt-2">5 Days Forecast:</div>
+                    <div className="w-[420px] h-[400px] left-0 top-0 absolute flex flex-col justify-between">
+                        <div className="w-72 h-[50px] left-[63px] top-[18px]  absolute text-center text-white text-[32px] font-bold font-['Poppins'] mt-2">
+                            5 Days Forecast:
+                        </div>
+                        <div className="flex flex-col gap-3 ml-[15px] mt-[75px]">
+                            {currentWeather &&
+                                currentWeather.dummy5DaysForecast.map((forecast, index) => (
+                                    <div
+                                        key={index}
+                                        className="w-[370px] h-[50px] ml-[30px] flex items-center"
+                                    >
+                                        <img
+                                            className="w-[60px] h-[60px]"
+                                            src={forecast.weatherIcon}
+                                            alt="Weather Icon"
+                                        />
+                                        <div className="w-[62px] text-center text-white text-2xl font-semibold font-['Poppins']">
+                                            {forecast.temperature}
+                                        </div>
+                                        <div className="w-[163px] text-white text-xl ml-[30px] font-semibold font-['Poppins']">
+                                            {forecast.date}
+                                        </div>
+
+
+                                    </div>
+                                ))}
+                        </div>
                     </div>
                 </div>
+
                 <div className="w-[870px] h-[400px] relative bg-neutral-600 rounded-[30px] shadow-xl ml-[50px] mt-[40px] flex items-center">
                     <div className="left-[306px] top-[13px] absolute text-white text-[32px] font-bold font-['Poppins']">
                         Hourly Forecast:

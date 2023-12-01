@@ -1,11 +1,10 @@
-import './App.css';
-import WeatherApp from '/WeatherApp/WeatherApp.jsx';
+import { useState } from 'react';
+import WeatherApp from './pages/WeatherApp.jsx';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(true)
   return (
-    <div className="App">
-      <WeatherApp/>
-    </div>
+      <WeatherApp darkMode={darkMode} setDarkMode={setDarkMode}/>
   );
 }
 

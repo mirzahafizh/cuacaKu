@@ -111,7 +111,7 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         sunset: '18:00',
         weatherIcon: rain_icon,
         weatherDescription: 'Hujan',
-        uvIndex: 8,
+        uvIndex: 11,
         pressure: '1005hPa',
         windSpeed: '2km/h',
         humidity: '99%',

@@ -46,7 +46,7 @@ function rekomendasiPakaian(uvIndex) {
         luarRuangan = 'Sangat Kurang';
         sengatanPanas = 'Bahaya';
         anginDingin = 'Ekstrem';
-        pakaian = 'Gunakan pakaian yang nyaman, berlapis, pelindung, dan hindari pakaian gelap serta topi atau perlindungan tambahan';
+        pakaian = 'Gunakan pakaian yang nyaman, berlapis, pelindung, dan hindari pakaian gelap serta topi ';
     }
     
 

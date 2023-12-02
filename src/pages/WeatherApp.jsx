@@ -296,11 +296,11 @@ const WeatherApp = ({ darkMode, setDarkMode }) => {
                 </div>
             </div>
             <KontenSatu darkMode={darkMode} currentWeather={currentWeather} />
-            {/* <KontenDua darkMode={darkMode} currentWeather={currentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
-            <KontenTiga currentWeather={currentWeather} />
+            <KontenDua darkMode={darkMode} currentWeather={currentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
+            {/* <KontenTiga currentWeather={currentWeather} />
             <KontenEmpat currentWeather={currentWeather} darkMode={darkMode} setCurrentWeather={setCurrentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
             <KontenLima />
-            <KontenSix currentWeather={currentWeather} darkMode={darkMode} /> */}
+            <KontenSix currentWeather={currentWeather} darkMode={darkMode} />  */}
         </div>
     );
 }

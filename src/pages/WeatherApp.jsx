@@ -4,10 +4,8 @@ import { default as React, useEffect, useState } from 'react';
 
 import KontenDua from '../components/KontenDua';
 import KontenEmpat from '../components/KontenEmpat';
-import KontenLima from '../components/KontenLima';
 import KontenSatu from '../components/KontenSatu';
 import KontenSix from '../components/KontenSix';
-import KontenTiga from '../components/KontenTiga';
 import SearchBar from '../components/SearchBar';
 import ToggleButton from '../components/ToggleButton';
 import dummyData from '../data/dummyData.json';

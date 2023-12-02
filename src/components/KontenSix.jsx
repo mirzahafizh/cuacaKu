@@ -75,8 +75,8 @@ export default function KontenSix({ currentWeather, darkMode }) {
     } = rekomendasiPakaian(uvIndex);
 
 
-    return (shadow-xl shadow-black
-        <div className={` mt-4  max-w-5xl mx-auto  rounded-[30px] ${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
+    return (
+        <div className={` mt-4  max-w-5xl mx-auto shadow-xl shadow-black rounded-[30px] ${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
 
             <div className='flex flex-col p-2'>
 
@@ -153,6 +153,7 @@ export default function KontenSix({ currentWeather, darkMode }) {
 
             </div>
         </div>
+
     );
 
 }

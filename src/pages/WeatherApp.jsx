@@ -15,9 +15,9 @@ import KontenTiga from '../components/KontenTiga';
 import SearchBar from '../components/SearchBar';
 import ToggleButton from '../components/ToggleButton';
 
-const WeatherApp = ({darkMode,setDarkMode}) => {
+const WeatherApp = ({ darkMode, setDarkMode }) => {
 
-    
+
     const hourlyForecastDataJakarta = [
         { time: '00:00', temperature: '26°C', windSpeed: '3km/h', humidity: '95%', weatherIcon: 'clear_icon' },
         { time: '03:00', temperature: '27°C', windSpeed: '4km/h', humidity: '92%', weatherIcon: 'clear_icon' },
@@ -25,8 +25,8 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         { time: '09:00', temperature: '29°C', windSpeed: '6km/h', humidity: '94%', weatherIcon: 'clear_icon' },
         { time: '12:00', temperature: '30°C', windSpeed: '7km/h', humidity: '97%', weatherIcon: 'clear_icon' },
     ];
-    
-    
+
+
     const dummy5DaysForecastJakarta = [
         { date: 'Tuesday, 5 Sep', temperature: '26°C', weatherIcon: rain_icon },
         { date: 'Monday, 4 Sep', temperature: '27°C', weatherIcon: clear_icon },
@@ -42,7 +42,7 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         { time: '09:00', temperature: '23°C', windSpeed: '6km/h', humidity: '94%', weatherIcon: 'rain_icon' },
         { time: '12:00', temperature: '22°C', windSpeed: '7km/h', humidity: '97%', weatherIcon: 'rain_icon' },
     ];
-    
+
     const dummy5DaysForecastSydney = [
         { date: 'Tuesday, 5 Sep', temperature: '26°C', weatherIcon: rain_icon },
         { date: 'Monday, 4 Sep', temperature: '27°C', weatherIcon: clear_icon },
@@ -50,7 +50,7 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         { date: 'Saturday, 2 Sep', temperature: '25°C', weatherIcon: drizzle_icon },
         { date: 'Friday, 1 Sep', temperature: '23°C', weatherIcon: snow_icon },
     ];
-    
+
     const hourlyForecastDataTokyo = [
         { time: '00:00', temperature: '26°C', windSpeed: '3km/h', humidity: '95%', weatherIcon: 'cloud_icon' },
         { time: '03:00', temperature: '25°C', windSpeed: '4km/h', humidity: '92%', weatherIcon: 'cloud_icon' },
@@ -58,8 +58,8 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         { time: '09:00', temperature: '27°C', windSpeed: '6km/h', humidity: '94%', weatherIcon: 'cloud_icon' },
         { time: '12:00', temperature: '29°C', windSpeed: '7km/h', humidity: '97%', weatherIcon: 'cloud_icon' },
     ];
-    
-    
+
+
     const dummy5DaysForecastTokyo = [
         { date: 'Tuesday, 5 Sep', temperature: '26°C', weatherIcon: rain_icon },
         { date: 'Monday, 4 Sep', temperature: '27°C', weatherIcon: clear_icon },
@@ -75,8 +75,8 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         { time: '09:00', temperature: '15°C', windSpeed: '6km/h', humidity: '94%', weatherIcon: 'drizzle_icon' },
         { time: '12:00', temperature: '16°C', windSpeed: '7km/h', humidity: '97%', weatherIcon: 'drizzle_icon' },
     ];
-    
-    
+
+
     const dummy5DaysForecastLondon = [
         { date: 'Tuesday, 5 Sep', temperature: '26°C', weatherIcon: rain_icon },
         { date: 'Monday, 4 Sep', temperature: '27°C', weatherIcon: clear_icon },
@@ -92,8 +92,8 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         { time: '09:00', temperature: '18°C', windSpeed: '6km/h', humidity: '94%', weatherIcon: 'drizzle_icon' },
         { time: '12:00', temperature: '15°C', windSpeed: '7km/h', humidity: '97%', weatherIcon: 'drizzle_icon' },
     ];
-    
-    
+
+
     const dummy5DaysForecastNewYork = [
         { date: 'Tuesday, 5 Sep', temperature: '26°C', weatherIcon: rain_icon },
         { date: 'Monday, 4 Sep', temperature: '27°C', weatherIcon: clear_icon },
@@ -105,7 +105,7 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
     const dummyCurrentWeatherJakarta = {
         city: 'Jakarta',
         temperature: '28°C',
-        tempNight:'25°C',
+        tempNight: '25°C',
         feelsLike: '22°C',
         sunrise: '06:00',
         sunset: '18:00',
@@ -117,17 +117,17 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         humidity: '99%',
         date: 'Kamis 30 November 2023',
         time: '19:00',
-        humidityNight:'85%',
+        humidityNight: '85%',
         pressureNight: '1010hPa',
         windSpeedNight: '3km/h',
         hourlyForecastData: hourlyForecastDataJakarta,
         dummy5DaysForecast: dummy5DaysForecastJakarta,
     };
-    
+
     const dummyCurrentWeatherSydney = {
         city: 'Sydney',
         temperature: '28°C',
-        tempNight:'25°C',
+        tempNight: '25°C',
         feelsLike: '25°C',
         sunrise: '05:30',
         sunset: '19:30',
@@ -139,16 +139,16 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         humidity: '80%',
         date: 'Kamis 30 November 2023',
         time: '19:00',
-        humidityNight:'85%',
+        humidityNight: '85%',
         pressureNight: '1010hPa',
         windSpeedNight: '3km/h',
         hourlyForecastData: hourlyForecastDataSydney,
         dummy5DaysForecast: dummy5DaysForecastSydney,
     };
-    
+
     const dummyCurrentWeatherNewYork = {
         city: 'New York',
-        tempNight:'25°C',
+        tempNight: '25°C',
         temperature: '20°C',
         feelsLike: '18°C',
         sunrise: '06:30',
@@ -161,16 +161,16 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         humidity: '75%',
         date: 'Kamis 30 November 2023',
         time: '19:00',
-        humidityNight:'85%',
+        humidityNight: '85%',
         pressureNight: '1010hPa',
         windSpeedNight: '3km/h',
         hourlyForecastData: hourlyForecastDataNewYork,
         dummy5DaysForecast: dummy5DaysForecastNewYork,
     };
-    
+
     const dummyCurrentWeatherTokyo = {
         city: 'Tokyo',
-        tempNight:'25°C',
+        tempNight: '25°C',
         temperature: '22°C',
         feelsLike: '20°C',
         sunrise: '05:30',
@@ -183,16 +183,16 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         humidity: '78%',
         date: 'Kamis 30 November 2023',
         time: '19:00',
-        humidityNight:'85%',
+        humidityNight: '85%',
         pressureNight: '1010hPa',
         windSpeedNight: '3km/h',
         hourlyForecastData: hourlyForecastDataTokyo,
         dummy5DaysForecast: dummy5DaysForecastTokyo,
     };
-    
+
     const dummyCurrentWeatherLondon = {
         city: 'London',
-        tempNight:'25°C',
+        tempNight: '25°C',
         temperature: '18°C',
         feelsLike: '16°C',
         sunrise: '07:00',
@@ -205,7 +205,7 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         humidity: '85%',
         date: 'Kamis 30 November 2023',
         time: '19:00',
-        humidityNight:'85%',
+        humidityNight: '85%',
         pressureNight: '1010hPa',
         windSpeedNight: '3km/h',
         hourlyForecastData: hourlyForecastDataLondon,
@@ -217,7 +217,7 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
     const [hourlyForecast, setHourlyForecast] = useState(hourlyForecastDataJakarta);
     const [fiveDaysForecast, setFiveDaysForecast] = useState(dummy5DaysForecastJakarta)
 
-    
+
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             handleSearch();
@@ -234,12 +234,12 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         setSearchTerm('');
     }, [currentWeather]);
 
-    
+
     const handleSearch = () => {
         // Implement your logic to filter the data based on the search term
         // For simplicity, let's assume the search term should match the city name exactly
         const searchedCity = searchTerm.toLowerCase();
-    
+
         // Use dummy data for search, replace it with actual data fetching logic
         switch (searchedCity) {
             case 'jakarta':
@@ -287,18 +287,20 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
 
 
     return (
-        <div className={`container mx-auto p-6 w-auto ${darkMode ?'bg-gradient-to-r from-neutral-700 to-stone-900 ':'bg-gradient-to-br from-white to-slate-600'}`}>
-        <div className="flex justify-between items-center">
-            <h1 className={`text-[35px]  font-['Poppins'] ${darkMode ?' text-white ':' text-black' }`}>CuacaKu</h1>
-            <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm}/>
-            <ToggleButton darkMode={darkMode} setDarkMode={setDarkMode}/>
-        </div>
-        <KontenSatu darkMode={darkMode} currentWeather={currentWeather}/>
-        <KontenDua darkMode={darkMode} currentWeather={currentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast}/>
-        <KontenTiga currentWeather={currentWeather}/>
-        <KontenEmpat currentWeather={currentWeather} darkMode={darkMode} setCurrentWeather={setCurrentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast}/>
-        <KontenLima/>
-        <KontenSix currentWeather={currentWeather} darkMode={darkMode}/>
+        <div className={`container mx-auto p-6 w-auto ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900 ' : 'bg-gradient-to-br from-white to-slate-600'}`}>
+            <div className="flex flex-col md:flex-row justify-between items-center">
+                <h1 className={`text-xl mb-4 md:mb-0 ${darkMode ? 'text-white' : 'text-black'}`}>CuacaKu</h1>
+                <div className="flex md:flex-row gap-4">
+                    <ToggleButton darkMode={darkMode} setDarkMode={setDarkMode} />
+                    <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm} />
+                </div>
+            </div>
+            <KontenSatu darkMode={darkMode} currentWeather={currentWeather} />
+            {/* <KontenDua darkMode={darkMode} currentWeather={currentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
+            <KontenTiga currentWeather={currentWeather} />
+            <KontenEmpat currentWeather={currentWeather} darkMode={darkMode} setCurrentWeather={setCurrentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
+            <KontenLima />
+            <KontenSix currentWeather={currentWeather} darkMode={darkMode} /> */}
         </div>
     );
 }

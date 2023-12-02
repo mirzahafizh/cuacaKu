@@ -1,0 +1,227 @@
+.container{
+    width:607px;
+    height: 829px;
+    margin: auto;
+    background-image:linear-gradient(180deg,#130754 0%,#3b2f80 100%) ;
+}
+
+.top-bar{
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    padding-top: 60px;
+}
+
+.top-bar input{
+    display: flex;
+    width: 640px;
+    height: 40px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    padding-left: 40px;
+    color: #626262;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.search-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #ebfffc;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    cursor: pointer;
+}
+
+
+.current-data {
+    margin-top: 50px;
+    width: 350px;
+    /*Lebarnyadiperbesaragarsemuaelemenberadadalamborder*/height: 350px;
+    align-items: center;
+    margin-left: 50px;
+    background: #626262;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    border-radius:12px ;
+    -webkit-border-radius:12px ;
+    -moz-border-radius:12px ;
+    -ms-border-radius:12px ;
+    -o-border-radius:12px ;
+}
+  
+  .weather-image {
+    width: 100px;
+    margin-left: 130px;
+    margin-top: 20px; /* Sesuaikan margin agar elemen tetap dalam border */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .weather-temp {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 40px; /* Ukuran font diperkecil */
+    font-weight: 400;
+  }
+  
+  .weather-location {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px; /* Ukuran font diperkecil */
+    font-weight: 400;
+  }
+  
+  .data-container {
+    margin-top: 40px; /* Sesuaikan margin agar elemen tetap dalam border */
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .element {
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Mengubah arah tata letak ke vertikal */
+    align-items: center; /* Menyusun elemen secara tengah vertikal */
+    gap: 12px;
+  }
+  
+  .data {
+    font-size: 18px; /* Ukuran font diperkecil */
+    font-weight: 400;
+    text-align: center; /* Teks diletakkan di tengah */
+  }
+  
+  .text {
+    font-size: 16px; /* Ukuran font diperkecil */
+    font-weight: 400;
+    text-align: center; /* Teks diletakkan di tengah */
+  }
+  
+  .icon {
+    margin-top: 10px;
+    width: 40px; /* Atur lebar ikon */
+    height: 40px;
+  }
+
+.humidity-icon,
+.wind-icon {
+  width: 20px; /* Atur lebar ikon sesuai kebutuhan */
+  height: 20px; /* Atur tinggi ikon sesuai kebutuhan */
+}
+  
+.konten-pertama{
+  display: flex;
+  gap: 40px;
+}
+
+.hourly-forecast{
+  margin-top: 50px;
+  width: 1100px;
+  height: 350px;
+  margin-right: 50px;
+  background-color: #626262;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+.card{
+  width: 150px;
+  margin-top: 25px;
+  margin-left: 25px;
+  height: 300px;
+  background: gray;
+}
+.weather-image-card{
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 35px;
+}
+
+.weather-temp-card{
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.weather-time{
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.data-container-card {
+  margin-top: 40px; /* Sesuaikan margin agar elemen tetap dalam border */
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.element-card {
+  margin: auto;
+  display: flex;
+  flex-direction: column; /* Mengubah arah tata letak ke vertikal */
+  align-items: center; /* Menyusun elemen secara tengah vertikal */
+  gap: 5px;
+  margin-top: -20px;
+}
+
+.data-card {
+  font-size: 18px; /* Ukuran font diperkecil */
+  font-weight: 400;
+  text-align: center; /* Teks diletakkan di tengah */
+}
+
+.text-card {
+  margin-top: 5px;
+  font-size: 10px; /* Ukuran font diperkecil */
+  font-weight: 400;
+  text-align: center; /* Teks diletakkan di tengah */
+}
+
+.icon-card {
+  margin-top: 20px;
+  width: 50px; /* Atur lebar ikon */
+  height: 50px;
+}
+
+.humidity-icon-card,
+.wind-icon-card {
+width: 25px; /* Atur lebar ikon sesuai kebutuhan */
+height: 25px; /* Atur tinggi ikon sesuai kebutuhan */
+}
+
+.humidity-percent-card,.wind-rate-card{
+  font-size: 10px; /* Ukuran font diperkecil */
+  font-weight: 400;
+  text-align: center;
+  margin-top: 5px;
+
+}

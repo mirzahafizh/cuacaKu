@@ -1,7 +1,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { default as React, useEffect, useState } from 'react';
-
+import { FaArrowUp } from 'react-icons/fa';
 import KontenDua from '../components/KontenDua';
 import KontenEmpat from '../components/KontenEmpat';
 import KontenSatu from '../components/KontenSatu';
@@ -51,6 +51,13 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         }
     };
 
+    const handleGoToTop = () => {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    };
+    
     const handleInputChange = (e) => {
         setSearchTerm(e.target.value);
     };
@@ -114,8 +121,8 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
 
 
     return (
-        <div className={`border-4 container mx-auto p-6 w-auto ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900 ' : 'bg-gradient-to-br from-white to-slate-600'}`}>
-            <div className="flex flex-col max-w-5xl mx-auto ">
+        <div className={` container mx-auto p-6 w-auto ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900 ' : 'bg-gradient-to-br from-white to-slate-600'}`}>
+            <div className="flex flex-col max-w-8xl mx-auto ">
                 <div className="flex justify-between md:flex-row gap-4">
                 <h1 className={`text-[50px]  text-[Poppins] text-center mb-4 md:mb-0 ${darkMode ? 'text-white' : 'text-black'}`}>CuacaKu</h1>
                     <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm} />
@@ -125,15 +132,21 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
         <KontenSatu getWeatherIcon={getWeatherIcon} darkMode={darkMode} currentWeather={currentWeather}/>
         <KontenDua getWeatherIcon={getWeatherIcon} darkMode={darkMode} currentWeather={currentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast}/>
 
-            <div className={`rounded-[11px]  text-center mx-auto text-white font-bold text-xl p-1 lg:max-w-5xl lg:w-72 w-full${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
+            <div className={`rounded-[11px] shadow-xl shadow-black text-center mx-auto text-white font-bold text-xl p-1 lg:max-w-5xl lg:w-72 w-full${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
                 Prakiraan Cuaca
             </div>
         <KontenEmpat getWeatherIcon={getWeatherIcon} currentWeather={currentWeather} darkMode={darkMode} setCurrentWeather={setCurrentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast}/>
 
-            <div className={`rounded-[11px] mt-4 text-center mx-auto text-white font-bold text-xl p-1 lg:max-w-5xl lg:w-72 w-full${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
+            <div className={`rounded-[11px] mt-4 shadow-xl shadow-black text-center mx-auto text-white font-bold text-xl p-1 lg:max-w-5xl lg:w-72 w-full${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
                 Kesehatan & Keselamatan
             </div>
             <KontenSix currentWeather={currentWeather} darkMode={darkMode} />
+            <div
+        className={`fixed bottom-8 right-8 bg-blue-500 text-white p-2 rounded-full cursor-pointer`}
+        onClick={handleGoToTop}
+      >
+        <FaArrowUp size={20} />
+      </div>
         </div>
 
     );

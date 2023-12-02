@@ -16,8 +16,8 @@ export default function KontenSatu({ darkMode, currentWeather, getWeatherIcon })
     const weatherIcon = getWeatherIcon(currentWeather.weatherIcon);
 
     return (
-        <div className="flex flex-col gap-4 mt-10 w-auto justify-center lg:flex-row mb-4 mx-auto max-w-5xl">
-            <div className={`flex flex-col shadow-xl shadow-black justify-center rounded-[30px] p-8 gap-4 w-auto lg: w-1/2 ${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
+        <div className="flex flex-col gap-4  w-auto justify-center lg:flex-row mb-4 mt-[90px] mx-auto max-w-8xl">
+            <div className={`flex flex-col shadow-xl shadow-black justify-center rounded-[30px] p-8 gap-4  lg:w-1/2 ${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
                 <div className={`kota text-4xl font-bold  text-center${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.city}</div>
                 <div className={`time text-center text-6xl lg:text-8xl mt-2 font-bold  ${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.time}</div>
                 <div className={`date text-center text-xl mt-2 font-normal '] ${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.date}</div>
@@ -46,7 +46,7 @@ export default function KontenSatu({ darkMode, currentWeather, getWeatherIcon })
                     </div>
                 </div>
                 <div className='flex flex-col justify-center items-center mb-4'>
-                    <img src={weatherIcon} alt="Weather Icon" className='w-1/2 h-1/2 lg:w-auto h-auto' />
+                    <img src={weatherIcon} alt="Weather Icon" className='w-1/2 h-1/2 lg:w-auto ' />
                     <span className={`text-4xl font-bold ${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.weatherDescription}</span>
                 </div>
                 <div className="flex flex-col w-full lg:w-auto">

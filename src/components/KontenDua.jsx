@@ -8,27 +8,27 @@ export default function KontenDua({darkMode,currentWeather,fiveDaysForecast,hour
         getWeatherIcon(data.weatherIcon)
     );
     return (
-        <div className="flex flex-col w-auto gap-0 justify-between lg:flex-row max-w-5xl mx-auto w-auto">
-            <div className={`flex flex-col shadow-xl shadow-black w-full justify-center items-center max-w-5xl rounded-[30px] p-4 lg:w-auto mb-4 mr-6 ${darkMode ? 'bg-neutral-600 text-white' : 'bg-zinc-400 text-black'}`} >
+        <div className="flex flex-col w-auto gap-2 justify-between lg:flex-row max-w-8xl ">
+            <div className={`flex flex-col shadow-xl  shadow-black w-full justify-center items-center max-w-8xl rounded-[30px] p-4 lg:w-1/3 mb-4 mr-6 ${darkMode ? 'bg-neutral-600 text-white' : 'bg-zinc-400 text-black'}`} >
                 <div className={`${darkMode ? 'text-white' : 'text-black'} text-lg mb-4 sm:text-xl`}>
                     5 Days Forecast:
                 </div>
-                <div className="flex flex-col flex-wrap">
+                <div className="flex flex-col flex-wrap w-full ">
                     {currentWeather &&
                         currentWeather.dummy5DaysForecast.map((forecast, index) => (
                             <div
                                 key={index}
-                                className="text-xs justify-between gap-4 items-center sm:text-sm flex  md:text-base lg:text-lg xl:text-xl"
+                                className="text-xs justify-between   items-center sm:text-sm flex  md:text-base lg:text-lg xl:text-xl"
                             >
                                 <img
-                                    className="w-12 h-12"
+                                    className="w-16 h-16 "
                                     src={weatherIconFiveDays[index]}
                                     alt="Weather Icon"
                                 />
-                                <div className={`${darkMode ? 'text-white' : 'text-black'}  text-xs sm:text-sm mt-1`}>
+                                <div className={`${darkMode ? 'text-white' : 'text-black'}  ml-[-70px] w-1/3 text-right  text-xl sm:text-xl mt-1`}>
                                     {forecast.temperature}
                                 </div>
-                                <div className={`${darkMode ? 'text-white' : 'text-black'} text-xs sm:text-sm mt-1`}>
+                                <div className={`${darkMode ? 'text-white' : 'text-black'} w-1/3 text-right text-xl sm:text-xl mt-1`}>
                                     {forecast.date}
                                 </div>
                             </div>
@@ -36,11 +36,11 @@ export default function KontenDua({darkMode,currentWeather,fiveDaysForecast,hour
                 </div>
             </div>
 
-            <div className={`flex flex-col shadow-xl shadow-black w-full mb-4 justify-center items-center w max-w-5xl rounded-[30px] p-4 lg:4/5 h-auto ${darkMode ? ' bg-neutral-600 text-white' : ' bg-zinc-400 text-black'}`}>
-                <div className={`${darkMode ? 'text-white' : 'text-black'} text-lg mb-4 sm:text-xl`}>
+            <div className={`flex flex-col shadow-xl shadow-black w-full mb-4 justify-center border-1 items-center w max-w-5xl rounded-[30px] p-4 lg:w-2/3 h-auto ${darkMode ? ' bg-neutral-600 text-white' : ' bg-zinc-400 text-black'}`}>
+                <div className={`${darkMode ? 'text-white' : 'text-black'} mt-[-30px] text-lg mb-4 sm:text-xl`}>
                     Hourly Forecast:
                 </div>
-                <div className="flex gap-3 justify-center flex-wrap">
+                <div className="flex gap-3 justify-center flex-wrap mt-[30px]">
                     {currentWeather &&
                         currentWeather.hourlyForecastData.map((data, index) => (
                             <div

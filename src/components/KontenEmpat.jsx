@@ -6,7 +6,7 @@ export default function KontenEmpat({currentWeather,setCurrentWeather,darkMode,g
 
 
     return (
-        <div className={`flex justify-center shadow-xl shadow-black gap-8 mt-4 w-full mx-auto px-6 pt-4 pb-2 rounded-[30px] lg:max-w-5xl lg:gap-52${darkMode ? ' bg-neutral-600 text-white ' : ' bg-zinc-400 text-black'}`}>
+        <div className={`flex justify-center shadow-xl shadow-black gap-8 mt-4 w-full mx-auto px-6 pt-4 pb-2 rounded-[30px] lg:max-w-8xl lg:gap-52${darkMode ? ' bg-neutral-600 text-white ' : ' bg-zinc-400 text-black'}`}>
             <div className='flex flex-col items-center'>
                 <div className="text-center text-lg md:text-[32px] lg:text-[32px] font-bold  mb-2">30 Kamis | Day</div>
                 <div className="flex items-center">

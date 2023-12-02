@@ -76,10 +76,9 @@ export default function KontenSix({ currentWeather, darkMode }) {
 
 
     return (
-        <div className={` mt-4  max-w-5xl mx-auto shadow-xl shadow-black rounded-[30px] ${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
+        <div className={` mt-4  max-w-8xl mx-auto shadow-xl shadow-black rounded-[30px] ${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
 
-            <div className='flex flex-col p-2'>
-
+            <div className='flex flex-col p-2 '>
                 <div className="bg-neutral-700 p-4 m-2 rounded-3xl flex justify-between items-center">
                     <div className="flex items-center mb-2">
                         <img className="w-10 h-10 mr-6" src={payung_icon} alt="payung Icon" />
@@ -117,14 +116,15 @@ export default function KontenSix({ currentWeather, darkMode }) {
 
                 {/* List 4 */}
                 <div className="bg-neutral-700 p-4 m-2 rounded-3xl flex justify-between items-center">
-                    <div className="flex items-center mb-2">
+                    <div className="flex items-center mb-2 w-1/2">
                         <img className="w-10 h-10 mr-6" src={pakaian_icon} alt="payung Icon" />
                         <div className="text-white font-poppins text-md lg:text-xl">Pakaian</div>
                     </div>
-                    <div className="flex items-center">
-                        <div className="mr-4 text-white font-poppins text-sm lg:text-xl">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
-                        <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
+                    <div className="flex items-center  w-1/2">
+                        <div className="mr-4 text-white  font-poppins text-sm lg:text-xl">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
                     </div>
+                    <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
+
                 </div>
 
                 {/* List 5 */}

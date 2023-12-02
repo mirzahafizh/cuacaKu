@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import clear_icon from '../assets/clear.png';
 import cloud_icon from '../assets/cloud.png';
@@ -6,16 +7,12 @@ import drizzle_icon from '../assets/drizzle.png';
 import rain_icon from '../assets/rain.png';
 import snow_icon from '../assets/snow.png';
 
-import KontenDua from '../components/KontenDua';
-import KontenEmpat from '../components/KontenEmpat';
 import KontenLima from '../components/KontenLima';
-import KontenSatu from '../components/KontenSatu';
-import KontenSix from '../components/KontenSix';
-import KontenTiga from '../components/KontenTiga';
 import SearchBar from '../components/SearchBar';
 import ToggleButton from '../components/ToggleButton';
+import Kesehatan from '../components/Kesehatan';
 
-const WeatherApp = ({darkMode,setDarkMode}) => {
+const Rekomendasi = ({darkMode,setDarkMode}) => {
 
     
     const hourlyForecastDataJakarta = [
@@ -284,26 +281,27 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
 
     };
 
+    const navigate = useNavigate();
 
+    const handleTitleClick = () => {
+        navigate('/');
+    };
 
     return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900' : 'bg-gradient-to-br from-white to-slate-600'}`}>
-      <div className="container mx-auto p-6">
-        <div className="flex justify-between items-center">
-          <h1 className={`ml-5 text-[35px] font-['Poppins'] ${darkMode ? 'text-white' : 'text-black'}`}>CuacaKu</h1>
-          <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm} />
-          <ToggleButton darkMode={darkMode} setDarkMode={setDarkMode} />
+        <div className={`min-h-screen ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900' : 'bg-gradient-to-br from-white to-slate-600'}`}>
+            <div className="container mx-auto p-6">
+                <div className="flex justify-between items-center">
+                    <h1 className={`ml-5 text-[35px] font-['Poppins'] ${darkMode ? 'text-white' : 'text-black'}`} onClick={handleTitleClick}>CuacaKu</h1>
+                    <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm} />
+                    <ToggleButton darkMode={darkMode} setDarkMode={setDarkMode} />
+                </div>
+                <KontenLima />
+                <Kesehatan currentWeather={currentWeather} darkMode={darkMode} />
+            </div>
         </div>
-        <KontenSatu darkMode={darkMode} currentWeather={currentWeather} />
-        <KontenDua darkMode={darkMode} currentWeather={currentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
-        <KontenTiga currentWeather={currentWeather} />
-        <KontenEmpat currentWeather={currentWeather} darkMode={darkMode} setCurrentWeather={setCurrentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
-        <KontenLima />
-        <KontenSix currentWeather={currentWeather} darkMode={darkMode} />
-      </div>
-    </div>
-  );
+    );
 }
 
 
-export default WeatherApp;
+
+export default Rekomendasi;

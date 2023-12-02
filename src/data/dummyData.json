@@ -1,0 +1,176 @@
+    
+    
+    {
+        "dummyCurrentWeatherJakarta": {
+        "city": "Jakarta",
+        "temperature": "28°C",
+        "tempNight": "25°C",
+        "feelsLike": "22°C",
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "weatherIcon": 2,
+        "weatherIconNight": 1,
+        "weatherDescription": "Hujan",
+        "uvIndex": 11,
+        "pressure": "1005hPa",
+        "windSpeed": "2km/h",
+        "humidity": "99%",
+        "date": "Kamis 30 November 2023",
+        "time": "19:00",
+        "humidityNight": "85%",
+        "pressureNight": "1010hPa",
+        "windSpeedNight": "3km/h",
+        "hourlyForecastData": [
+            { "time": "00:00", "temperature": "26°C", "windSpeed": "3km/h", "humidity": "95%", "weatherIcon": 2 },
+            { "time": "03:00", "temperature": "27°C", "windSpeed": "4km/h", "humidity": "92%", "weatherIcon": 2 },
+            { "time": "06:00", "temperature": "28°C", "windSpeed": "5km/h", "humidity": "90%", "weatherIcon": 2 },
+            { "time": "09:00", "temperature": "29°C", "windSpeed": "6km/h", "humidity": "94%", "weatherIcon": 2 },
+            { "time": "12:00", "temperature": "30°C", "windSpeed": "7km/h", "humidity": "97%", "weatherIcon": 2 }
+        ],
+        "dummy5DaysForecast": [
+            { "date": "Tuesday, 5 Sep", "temperature": "26°C", "weatherIcon": 1 },
+            { "date": "Monday, 4 Sep", "temperature": "27°C", "weatherIcon": 2 },
+            { "date": "Sunday, 3 Sep", "temperature": "28°C", "weatherIcon": 3 },
+            { "date": "Saturday, 2 Sep", "temperature": "29°C", "weatherIcon": 4 },
+            { "date": "Friday, 1 Sep", "temperature": "30°C", "weatherIcon": 5 }
+        ]
+        },
+        "dummyCurrentWeatherSydney": {
+        "city": "Sydney",
+        "temperature": "28°C",
+        "tempNight": "25°C",
+        "feelsLike": "25°C",
+        "sunrise": "05:30",
+        "sunset": "19:30",
+        "weatherIcon": 1,
+        "weatherIconNight": 2,
+        "weatherDescription": "Cerah",
+        "uvIndex": 7,
+        "pressure": "1003hPa",
+        "windSpeed": "5km/h",
+        "humidity": "80%",
+        "date": "Kamis 30 November 2023",
+        "time": "19:00",
+        "humidityNight": "85%",
+        "pressureNight": "1010hPa",
+        "windSpeedNight": "3km/h",
+        "hourlyForecastData": [
+            { "time": "00:00", "temperature": "26°C", "windSpeed": "3km/h", "humidity": "95%", "weatherIcon": 1 },
+            { "time": "03:00", "temperature": "25°C", "windSpeed": "4km/h", "humidity": "92%", "weatherIcon": 1 },
+            { "time": "06:00", "temperature": "24°C", "windSpeed": "5km/h", "humidity": "90%", "weatherIcon": 1 },
+            { "time": "09:00", "temperature": "23°C", "windSpeed": "6km/h", "humidity": "94%", "weatherIcon": 1 },
+            { "time": "12:00", "temperature": "22°C", "windSpeed": "7km/h", "humidity": "97%", "weatherIcon": 1 }
+        ],
+        "dummy5DaysForecast": [
+            { "date": "Tuesday, 5 Sep", "temperature": "26°C", "weatherIcon": "rain_icon" },
+            { "date": "Monday, 4 Sep", "temperature": "27°C", "weatherIcon": "clear_icon" },
+            { "date": "Sunday, 3 Sep", "temperature": "28°C", "weatherIcon": "cloud_icon" },
+            { "date": "Saturday, 2 Sep", "temperature": "25°C", "weatherIcon": "drizzle_icon" },
+            { "date": "Friday, 1 Sep", "temperature": "23°C", "weatherIcon": "snow_icon" }
+        ]
+        },
+        "dummyCurrentWeatherNewYork": {
+        "city": "New York",
+        "tempNight": "25°C",
+        "temperature": "20°C",
+        "feelsLike": "18°C",
+        "sunrise": "06:30",
+        "sunset": "17:30",
+        "weatherIcon": 3,
+        "weatherIconNight": 2,
+        "weatherDescription": "Berawan",
+        "uvIndex": 6,
+        "pressure": "1008hPa",
+        "windSpeed": "3km/h",
+        "humidity": "75%",
+        "date": "Kamis 30 November 2023",
+        "time": "19:00",
+        "humidityNight": "85%",
+        "pressureNight": "1010hPa",
+        "windSpeedNight": "3km/h",
+        "hourlyForecastData": [
+            { "time": "00:00", "temperature": "16°C", "windSpeed": "3km/h", "humidity": "95%", "weatherIcon": 4 },
+            { "time": "03:00", "temperature": "17°C", "windSpeed": "4km/h", "humidity": "92%", "weatherIcon": 4 },
+            { "time": "06:00", "temperature": "19°C", "windSpeed": "5km/h", "humidity": "90%", "weatherIcon": 4 },
+            { "time": "09:00", "temperature": "18°C", "windSpeed": "6km/h", "humidity": "94%", "weatherIcon": 4 },
+            { "time": "12:00", "temperature": "15°C", "windSpeed": "7km/h", "humidity": "97%", "weatherIcon": 4 }
+        ],
+        "dummy5DaysForecast": [
+            { "date": "Tuesday, 5 Sep", "temperature": "26°C", "weatherIcon": "rain_icon" },
+            { "date": "Monday, 4 Sep", "temperature": "27°C", "weatherIcon": "clear_icon" },
+            { "date": "Sunday, 3 Sep", "temperature": "28°C", "weatherIcon": "cloud_icon" },
+            { "date": "Saturday, 2 Sep", "temperature": "25°C", "weatherIcon": "drizzle_icon" },
+            { "date": "Friday, 1 Sep", "temperature": "23°C", "weatherIcon": "snow_icon" }
+        ]
+        },
+        "dummyCurrentWeatherTokyo": {
+            "city": "Tokyo",
+            "tempNight": "25°C",
+            "temperature": "22°C",
+            "feelsLike": "20°C",
+            "sunrise": "05:30",
+            "sunset": "18:30",
+            "weatherIcon": 4,
+            "weatherIconNight": 2,
+            "weatherDescription": "Gerimis",
+            "uvIndex": 6,
+            "pressure": "1002hPa",
+            "windSpeed": "4km/h",
+            "humidity": "78%",
+            "date": "Kamis 30 November 2023",
+            "time": "19:00",
+            "humidityNight": "85%",
+            "pressureNight": "1010hPa",
+            "windSpeedNight": "3km/h",
+            "hourlyForecastData": [
+                { "time": "00:00", "temperature": "26°C", "windSpeed": "3km/h", "humidity": "95%", "weatherIcon":4 },
+                { "time": "03:00", "temperature": "25°C", "windSpeed": "4km/h", "humidity": "92%", "weatherIcon":4 },
+                { "time": "06:00", "temperature": "24°C", "windSpeed": "5km/h", "humidity": "90%", "weatherIcon":4 },
+                { "time": "09:00", "temperature": "27°C", "windSpeed": "6km/h", "humidity": "94%", "weatherIcon":4 },
+                { "time": "12:00", "temperature": "29°C", "windSpeed": "7km/h", "humidity": "97%", "weatherIcon":4 }
+            ],
+            "dummy5DaysForecast": [
+                { "date": "Tuesday, 5 Sep", "temperature": "26°C", "weatherIcon": "rain_icon" },
+                { "date": "Monday, 4 Sep", "temperature": "27°C", "weatherIcon": "clear_icon" },
+                { "date": "Sunday, 3 Sep", "temperature": "28°C", "weatherIcon": "cloud_icon" },
+                { "date": "Saturday, 2 Sep", "temperature": "25°C", "weatherIcon": "drizzle_icon" },
+                { "date": "Friday, 1 Sep", "temperature": "23°C", "weatherIcon": "snow_icon" }
+            ]
+            },
+            "dummyCurrentWeatherLondon": {
+            "city": "London",
+            "tempNight": "25°C",
+            "temperature": "18°C",
+            "feelsLike": "16°C",
+            "sunrise": "07:00",
+            "sunset": "17:30",
+            "weatherIcon": 5,
+           "weatherIconNight": 2,
+            "weatherDescription": "Salju",
+            "uvIndex": 5,
+            "pressure": "1010hPa",
+            "windSpeed": "3km/h",
+            "humidity": "85%",
+            "date": "Kamis 30 November 2023",
+            "time": "19:00",
+            "humidityNight": "85%",
+            "pressureNight": "1010hPa",
+            "windSpeedNight": "3km/h",
+            "hourlyForecastData": [
+                { "time": "00:00", "temperature": "16°C", "windSpeed": "3km/h", "humidity": "95%", "weatherIcon": 3 },
+                { "time": "03:00", "temperature": "17°C", "windSpeed": "4km/h", "humidity": "92%", "weatherIcon": 3 },
+                { "time": "06:00", "temperature": "19°C", "windSpeed": "5km/h", "humidity": "90%", "weatherIcon": 3 },
+                { "time": "09:00", "temperature": "18°C", "windSpeed": "6km/h", "humidity": "94%", "weatherIcon": 3 },
+                { "time": "12:00", "temperature": "15°C", "windSpeed": "7km/h", "humidity": "97%", "weatherIcon": 3 }
+            ],
+            "dummy5DaysForecast": [
+                { "date": "Tuesday, 5 Sep", "temperature": "26°C", "weatherIcon": "rain_icon" },
+                { "date": "Monday, 4 Sep", "temperature": "27°C", "weatherIcon": "clear_icon" },
+                { "date": "Sunday, 3 Sep", "temperature": "28°C", "weatherIcon": "cloud_icon" },
+                { "date": "Saturday, 2 Sep", "temperature": "25°C", "weatherIcon": "drizzle_icon" },
+                { "date": "Friday, 1 Sep", "temperature": "23°C", "weatherIcon": "snow_icon" }
+            ]
+            }
+        }
+    
+    

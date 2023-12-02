@@ -11,7 +11,10 @@ import uvWhite_icon from '../assets/uv-white.png';
 import windBlack_icon from '../assets/wind-black.png';
 import wind_icon from '../assets/wind.png';
 
-export default function KontenSatu({darkMode,currentWeather}){
+export default function KontenSatu({ darkMode, currentWeather, getWeatherIcon }) {
+    // Gunakan getWeatherIcon di dalam komponen KontenSatu
+    const weatherIcon = getWeatherIcon(currentWeather.weatherIcon);
+
     return(
         <div className="flex gap-4 mt-10 ml-[80px] ">
             <div className="w-[510px] h-[330px] relative flex flex-col items-center justify-center ">
@@ -44,7 +47,7 @@ export default function KontenSatu({darkMode,currentWeather}){
                         </div>
                     </div>
                     <div className="current-weather ml-[70px]">
-                        <img src={currentWeather.weatherIcon} alt="" />
+                        <img src={weatherIcon} alt="" />
                         <div className={`weather-text text-[50px] font-bold ml-[40px] font-['Poppins'] ${darkMode ?' text-white ':' text-black' }`}>{currentWeather.weatherDescription}</div>
                     </div>
                     <div className="detail ml-[70px] ">

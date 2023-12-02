@@ -1,7 +1,15 @@
 import navigation_icon from '../assets/navigation.png';
-import rain_icon from '../assets/rain.png';
 
-export default function KontenDua({darkMode,currentWeather,fiveDaysForecast,hourlyForecast}){
+export default function KontenDua({darkMode,currentWeather,fiveDaysForecast,hourlyForecast,getWeatherIcon}){
+    const weatherIconFiveDays = currentWeather.dummy5DaysForecast.map((forecast) =>
+        getWeatherIcon(forecast.weatherIcon)
+    );
+    const weatherIconHourly = currentWeather.hourlyForecastData.map((data) =>
+        getWeatherIcon(data.weatherIcon)
+    );
+
+    
+
     return(
                 <div className="flex ">
                 <div className="w-[420px] h-[400px] relative mt-[20px] shadow-xl ml-[80px]">
@@ -19,7 +27,7 @@ export default function KontenDua({darkMode,currentWeather,fiveDaysForecast,hour
                                     >
                                         <img
                                             className="w-[60px] h-[60px]"
-                                            src={forecast.weatherIcon}
+                                            src={weatherIconFiveDays[index]}
                                             alt="Weather Icon"
                                         />
                                         <div className={`w-[62px] text-center  text-2xl font-semibold font-['Poppins']  ${darkMode ?' text-white ':' text-black'}`}>
@@ -50,7 +58,7 @@ export default function KontenDua({darkMode,currentWeather,fiveDaysForecast,hour
                                 <div className="left-[12px] top-[81px] absolute  text-xl font-bold font-['Poppins']">
                                     {data.temperature}
                                 </div>
-                                <img src={rain_icon} alt="Weather Icon" className="ml-[-3px]" />
+                                <img src={weatherIconHourly[index]} alt="Weather Icon" className="ml-[-3px]" />
                                 <img
                                     src={navigation_icon}
                                     alt="Navigation Icon"

@@ -1,7 +1,10 @@
-import rain_icon from '../assets/rain.png';
-import rain_night_icon from '../assets/rainNaight.png';
 
-export default function KontenEmpat({currentWeather,setCurrentWeather,darkMode}){
+export default function KontenEmpat({currentWeather,setCurrentWeather,darkMode,getWeatherIcon}){
+
+    const weatherIconNight = getWeatherIcon(currentWeather.weatherIconNight);
+    const weatherIcon = getWeatherIcon(currentWeather.weatherIcon);
+
+
     return(
         <div className="konten-tiga ">
             <div className="flex ">
@@ -9,7 +12,7 @@ export default function KontenEmpat({currentWeather,setCurrentWeather,darkMode})
                     <div className={`w-[1340px] h-[400px] left-0 top-0 absolute rounded-[30px] ${darkMode ?' bg-neutral-600 text-white ':' bg-zinc-400 text-black'}`}>
                         {/* Row Pertama */}
                         <div className="w-[200px] h-[93px] ml-44 mt-24 mb-4">
-                            <img className="w-[90x] h-[90px] absolute" src={rain_icon} alt="Rain Icon" />
+                            <img className="w-[90x] h-[90px] absolute" src={weatherIcon} alt="Rain Icon" />
                             <div className="ml-4">
                                 <div className="text-right  text-2xl font-semibold font-['Poppins']">{currentWeather.temperature}</div>
                                 <div className="text-right  opacity-50 text-2xl font-semibold font-['Poppins']">{currentWeather.temperature}</div>
@@ -46,7 +49,7 @@ export default function KontenEmpat({currentWeather,setCurrentWeather,darkMode})
                     <div className="w-[500px] h-[400px] left-[750px] top-0 absolute">
                         {/* Row Pertama */}
                         <div className="w-[200px] h-[93px] ml-32 mt-24 mb-4">
-                            <img className="w-[90x] h-[90px] absolute" src={rain_night_icon} alt="Rain Night Icon" />
+                            <img className="w-[90x] h-[90px] absolute" src={weatherIconNight} alt="Rain Night Icon" />
                             <div className="ml-4">
                                 <div className="text-right  text-2xl font-semibold font-['Poppins']">{currentWeather.tempNight}</div>
                                 <div className="text-right  opacity-50 text-2xl font-semibold font-['Poppins']">{currentWeather.tempNight}</div>

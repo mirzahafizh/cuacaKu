@@ -2,7 +2,7 @@ import search_icon from '../assets/search.png';
 
 export default function SearchBar({ searchTerm, handleInputChange, handleKeyPress, handleSearch }) {
     return (
-        <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4">
+        <div className="flex flex-col items-center justify-center space-y-4  md:flex-row md:space-x-4">
             <div className="relative w-full md:w-full">
                 <input
                     type="text"

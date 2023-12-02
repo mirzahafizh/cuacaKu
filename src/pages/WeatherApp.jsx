@@ -122,7 +122,7 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
 
     return (
         <div className={` container mx-auto p-6 w-auto ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900 ' : 'bg-gradient-to-br from-white to-slate-600'}`}>
-            <div className="flex flex-col max-w-8xl mx-auto ">
+            <div className="flex flex-col max-w-8xl mx-auto w-full">
                 <div className="flex justify-between md:flex-row gap-4">
                 <h1 className={`text-[50px]  text-[Poppins] text-center mb-4 md:mb-0 ${darkMode ? 'text-white' : 'text-black'}`}>CuacaKu</h1>
                     <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm} />

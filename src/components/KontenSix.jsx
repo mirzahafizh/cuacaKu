@@ -39,14 +39,14 @@ function rekomendasiPakaian(uvIndex) {
         luarRuangan = 'Sangat Kurang';
         sengatanPanas = 'Bahaya';
         anginDingin = 'Aman';
-        pakaian = 'Gunakan pakaian yang nyaman, berlapis, pelindung, dan hindari pakaian gelap';
+        pakaian = 'Gunakan pakaian yang nyaman, berlapis, pelindung, ';
     } else if (uvIndex >= 11) {
         indeksUV = 'Ekstrem';
         payung = 'Diperlukan';
         luarRuangan = 'Sangat Kurang';
         sengatanPanas = 'Bahaya';
         anginDingin = 'Ekstrem';
-        pakaian = 'Gunakan pakaian yang nyaman, berlapis, pelindung, dan hindari pakaian gelap serta topi ';
+        pakaian = 'Gunakan pakaian yang nyaman, berlapis, serta topi ';
     }
 
 
@@ -120,11 +120,10 @@ export default function KontenSix({ currentWeather, darkMode }) {
                         <img className="w-10 h-10 mr-6" src={pakaian_icon} alt="payung Icon" />
                         <div className="text-white font-poppins text-md lg:text-xl">Pakaian</div>
                     </div>
-                    <div className="flex items-center  w-1/2">
-                        <div className="mr-4 text-white  font-poppins text-sm lg:text-xl">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                    <div className="flex items-center h-auto ">
+                        <div className="mr-1 text-white  font-poppins text-sm lg:text-xl">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                        <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
                     </div>
-                    <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
-
                 </div>
 
                 {/* List 5 */}

@@ -3,8 +3,8 @@ import rain_icon from '../assets/rain.png';
 
 export default function KontenDua({ darkMode, currentWeather, fiveDaysForecast, hourlyForecast }) {
     return (
-        <div className="flex flex-col w-auto justify-between lg:flex-row max-w-5xl mx-auto gap-4 w-auto">
-            <div className={`flex flex-col w-full mb-4 justify-center items-center w max-w-5xl rounded-[30px] p-4 lg:w-auto ${darkMode ? 'bg-neutral-600 text-white' : 'bg-zinc-400 text-black'}`} >
+        <div className="flex flex-col w-auto gap-0 justify-between lg:flex-row max-w-5xl mx-auto w-auto">
+            <div className={`flex flex-col shadow-xl shadow-black w-full justify-center items-center max-w-5xl rounded-[30px] p-4 lg:w-auto mb-4 mr-6 ${darkMode ? 'bg-neutral-600 text-white' : 'bg-zinc-400 text-black'}`} >
                 <div className={`${darkMode ? 'text-white' : 'text-black'} text-lg mb-4 sm:text-xl`}>
                     5 Days Forecast:
                 </div>
@@ -30,7 +30,8 @@ export default function KontenDua({ darkMode, currentWeather, fiveDaysForecast, 
                         ))}
                 </div>
             </div>
-            <div className={`flex flex-col w-full mb-4 justify-center items-center w max-w-5xl rounded-[30px] p-4 lg:4/5 h-auto ${darkMode ? ' bg-neutral-600 text-white' : ' bg-zinc-400 text-black'}`}>
+
+            <div className={`flex flex-col shadow-xl shadow-black w-full mb-4 justify-center items-center w max-w-5xl rounded-[30px] p-4 lg:4/5 h-auto ${darkMode ? ' bg-neutral-600 text-white' : ' bg-zinc-400 text-black'}`}>
                 <div className={`${darkMode ? 'text-white' : 'text-black'} text-lg mb-4 sm:text-xl`}>
                     Hourly Forecast:
                 </div>

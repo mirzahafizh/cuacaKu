@@ -8,10 +8,8 @@ import snow_icon from '../assets/snow.png';
 
 import KontenDua from '../components/KontenDua';
 import KontenEmpat from '../components/KontenEmpat';
-import KontenLima from '../components/KontenLima';
 import KontenSatu from '../components/KontenSatu';
 import KontenSix from '../components/KontenSix';
-import KontenTiga from '../components/KontenTiga';
 import SearchBar from '../components/SearchBar';
 import ToggleButton from '../components/ToggleButton';
 
@@ -288,20 +286,25 @@ const WeatherApp = ({ darkMode, setDarkMode }) => {
 
     return (
         <div className={`container mx-auto p-6 w-auto ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900 ' : 'bg-gradient-to-br from-white to-slate-600'}`}>
-            <div className="flex flex-col md:flex-row justify-between items-center">
-                <h1 className={`text-xl mb-4 md:mb-0 ${darkMode ? 'text-white' : 'text-black'}`}>CuacaKu</h1>
-                <div className="flex md:flex-row gap-4">
-                    <ToggleButton darkMode={darkMode} setDarkMode={setDarkMode} />
+            <div className="flex flex-col max-w-5xl mx-auto">
+                <h1 className={`text-xl text-center mb-4 md:mb-0 ${darkMode ? 'text-white' : 'text-black'}`}>CuacaKu</h1>
+                <div className="flex justify-between md:flex-row gap-4">
                     <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm} />
+                    <ToggleButton darkMode={darkMode} setDarkMode={setDarkMode} />
                 </div>
             </div>
             <KontenSatu darkMode={darkMode} currentWeather={currentWeather} />
             <KontenDua darkMode={darkMode} currentWeather={currentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
-            {/* <KontenTiga currentWeather={currentWeather} />
+            <div className={`rounded-[11px]  text-center mx-auto text-white font-bold text-xl p-1 lg:max-w-5xl lg:w-72 w-full${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
+                Prakiraan Cuaca
+            </div>
             <KontenEmpat currentWeather={currentWeather} darkMode={darkMode} setCurrentWeather={setCurrentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
-            <KontenLima />
-            <KontenSix currentWeather={currentWeather} darkMode={darkMode} />  */}
+            <div className={`rounded-[11px] mt-4 text-center mx-auto text-white font-bold text-xl p-1 lg:max-w-5xl lg:w-72 w-full${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
+                Kesehatan & Keselamatan
+            </div>
+            <KontenSix currentWeather={currentWeather} darkMode={darkMode} /> 
         </div>
+
     );
 }
 

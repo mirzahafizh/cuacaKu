@@ -3,21 +3,18 @@ export default function SearchBar({searchTerm,handleInputChange,handleKeyPress,h
 
 
     return(
-<div className="flex items-center border border-gray-300 bg-white rounded-full px-4 py-2 shadow-md">
-    <div onClick={() => handleSearch(searchTerm)} style={{ cursor: 'pointer' }}>
-        <img src={search_icon} alt="Search Icon" className="w-6 h-6 text-white" />
-    </div>
-    <input
-        type="text"
-        className="pl-4 flex-grow focus:outline-none"
-        placeholder="Search"
-        value={searchTerm}
-        onChange={handleInputChange}
-        onKeyPress={handleKeyPress}
-    />
-</div>
-
-
-
+    <div className="flex  items-center justify-center space-x-4">
+            <input
+                type="text"
+                className="cityInput border border-gray-300 rounded-full px-4 py-2"
+                placeholder="search"
+                value={searchTerm}
+                onChange={handleInputChange}
+                onKeyPress={handleKeyPress}  // Add this line to handle 'Enter' key press
+            />
+            <div className="search-icon" onClick={() => handleSearch(searchTerm)} style={{ cursor: 'pointer' }}>
+                <img src={search_icon} alt="Search Icon" className="w-6 h-6 text-white" />
+            </div>
+        </div>
     )
 }

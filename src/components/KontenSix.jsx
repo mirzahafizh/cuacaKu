@@ -60,11 +60,9 @@ function rekomendasiPakaian(uvIndex) {
     };
 }
 
-export default function KontenSix({ currentWeather ,darkMode}) {
-    // Misalnya, uvIndex diperoleh dari prop currentWeather
+export default function KontenSix({ currentWeather, darkMode }) {
     const uvIndex = currentWeather.uvIndex || 0;
 
-    // Mendapatkan rekomendasi pakaian berdasarkan uvIndex
     const {
         payung,
         luarRuangan,
@@ -74,46 +72,41 @@ export default function KontenSix({ currentWeather ,darkMode}) {
         anginDingin
     } = rekomendasiPakaian(uvIndex);
 
-
-    return(
-<div className="kontenSix">
-        <div className="flex">
-            <div className="w-[1340px] h-[850px] relative mt-[20px] mb-24 shadow-xl  ml-[80px]">
-                <div className={`w-[1340px] h-[850px] left-0 top-[16px] absolute shadow-xl shadow-black  rounded-[30px] ${darkMode ?' bg-neutral-600 ':' bg-zinc-400'}`}>
-                    {/* Tombol */}
-                    <button
-                        className="w-[300px] h-[40px] absolute right-[20px] top-[20px] bg-fuchsia-950 bg-opacity-40 text-white rounded-3xl font-semibold"
-                        onClick={() => {
-                            // Logika yang dijalankan saat tombol diklik
-                            console.log('Button Clicked!');
-                        }}
-                    >
-                        Lihat prakiraan lengkapnya<span className="ml-2">&#62;</span>
-                    </button>
-
-                    <div className='flex mt-10'>
-                        {/* Tabel List */}
+    return (
+        <div className="kontenSix">
+            <div className="flex flex-col w-auto justify-between lg:flex-row max-w-5xl mx-auto gap-4 w-auto">
+                <div className="w-full h-[850px] relative mt-[20px] mb-24 shadow-xl">
+                    <div className={`w-full h-[850px] left-0 top-[16px] absolute shadow-xl shadow-black rounded-[30px] ${darkMode ? 'bg-neutral-600 ' : 'bg-zinc-400'}`}>
+                        {/* Rest of your code remains unchanged */}
+                        <button
+                            className="w-[50%] sm:w-[50%] md:w-[40%] lg:w-[30%] xl:w-[24%] h-[40px] absolute right-[20px] top-[20px] bg-fuchsia-950 bg-opacity-40 text-white rounded-3xl font-semibold"
+                            onClick={() => {
+                                console.log('Button Clicked!');
+                            }}
+                        >
+                            Lihat prakiraan lengkapnya<span className="ml-2">&#62;</span>
+                        </button>
+                        <div className="flex mt-10">
                         <div className="w-[90%] mt-10 ml-4 mx-auto">
                             {/* List 1 */}
                             <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
                                 <div className="flex items-center mb-2">
                                     <img className="w-10 h-10 mr-6" src={payung_icon} alt="payung Icon" />
-                                    <div className="text-white font-poppins text-xl">Payung</div>
+                                    <div className="text-white font-poppins text-sm">Payung</div>
                                 </div>
                                 <div className="flex items-center">
-                                    <div className="mr-4 text-white font-poppins text-xl">{payung}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="mr-4 text-white font-poppins text-sm">{payung}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
                                     <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
                                 </div>
                             </div>
-
                             {/* List 2 */}
                             <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
                                 <div className="flex items-center mb-2">
                                     <img className="w-10 h-10 mr-6" src={run_icon} alt="run Icon" />
-                                    <div className="text-white font-poppins text-xl">Luar Ruangan</div>
+                                    <div className="text-white font-poppins text-sm">Luar Ruangan</div>
                                 </div>
                                 <div className="flex items-center">
-                                    <div className="mr-4 text-white font-poppins text-xl">{luarRuangan}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="mr-4 text-white font-poppins text-sm">{luarRuangan}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
                                     <div className="rounded-full h-4 w-4 mr-2 bg-red-500"></div> {/* Bulatan hijau */}
                                 </div>
                             </div>
@@ -122,10 +115,10 @@ export default function KontenSix({ currentWeather ,darkMode}) {
                             <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
                                 <div className="flex items-center mb-2">
                                     <img className="w-10 h-10 mr-6" src={uv1_icon} alt="payung Icon" />
-                                    <div className="text-white font-poppins text-xl">Indeks UV</div>
+                                    <div className="text-white font-poppins text-sm">Indeks UV</div>
                                 </div>
                                 <div className="flex items-center">
-                                    <div className="mr-4 text-white font-poppins text-xl">{indeksUV}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="mr-4 text-white font-poppins text-sm">{indeksUV}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
                                     <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
                                 </div>
                             </div>
@@ -134,10 +127,10 @@ export default function KontenSix({ currentWeather ,darkMode}) {
                             <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
                                 <div className="flex items-center mb-2">
                                     <img className="w-10 h-10 mr-6" src={pakaian_icon} alt="payung Icon" />
-                                    <div className="text-white font-poppins text-xl">Pakaian</div>
+                                    <div className="text-white font-poppins text-sm">Pakaian</div>
                                 </div>
                                 <div className="flex items-center">
-                                    <div className="mr-4 text-white font-poppins text-xl">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="mr-4 ml-10 text-white font-poppins text-sm">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
                                     <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
                                 </div>
                             </div>
@@ -146,10 +139,10 @@ export default function KontenSix({ currentWeather ,darkMode}) {
                             <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
                                 <div className="flex items-center mb-2">
                                     <img className="w- h-10 mr-10 ml-3" src={temp_icon} alt="payung Icon" />
-                                    <div className="text-white font-poppins text-xl">Sengatan Panas</div>
+                                    <div className="text-white font-poppins text-sm">Sengatan Panas</div>
                                 </div>
                                 <div className="flex items-center">
-                                    <div className="mr-4 text-white font-poppins text-xl">{sengatanPanas}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="mr-4 text-white font-poppins text-sm">{sengatanPanas}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
                                     <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
                                 </div>
                             </div>
@@ -158,21 +151,18 @@ export default function KontenSix({ currentWeather ,darkMode}) {
                             <div className="bg-neutral-700 p-4 mb-4 rounded-3xl flex justify-between items-center">
                                 <div className="flex items-center mb-2">
                                     <img className="w- h-10 mr-10 ml-3" src={temp_icon} alt="payung Icon" />
-                                    <div className="text-white font-poppins text-xl">Angin Dingin</div>
+                                    <div className="text-white font-poppins text-sm">Angin Dingin</div>
                                 </div>
                                 <div className="flex items-center">
-                                    <div className="mr-4 text-white font-poppins text-xl">{anginDingin}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                                    <div className="mr-4 text-white font-poppins text-sm">{anginDingin}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
                                     <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
                                 </div>
                             </div>
-                            
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-);
-
+    );
 }
-

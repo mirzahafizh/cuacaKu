@@ -287,22 +287,22 @@ const WeatherApp = ({ darkMode, setDarkMode }) => {
 
 
     return (
-        <div className={`container mx-auto p-6 w-auto ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900 ' : 'bg-gradient-to-br from-white to-slate-600'}`}>
-            <div className="flex flex-col md:flex-row justify-between items-center">
-                <h1 className={`text-xl mb-4 md:mb-0 ${darkMode ? 'text-white' : 'text-black'}`}>CuacaKu</h1>
-                <div className="flex md:flex-row gap-4">
-                    <ToggleButton darkMode={darkMode} setDarkMode={setDarkMode} />
-                    <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm} />
-                </div>
+        <div className={`min-h-screen ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900' : 'bg-gradient-to-br from-white to-slate-600'}`}>
+          <div className="container mx-auto p-6">
+            <div className="flex justify-between items-center">
+              <h1 className={`ml-5 text-[35px] font-['Poppins'] ${darkMode ? 'text-white' : 'text-black'}`}>CuacaKu</h1>
+              <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm} />
+              <ToggleButton darkMode={darkMode} setDarkMode={setDarkMode} />
             </div>
             <KontenSatu darkMode={darkMode} currentWeather={currentWeather} />
             <KontenDua darkMode={darkMode} currentWeather={currentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
             {/* <KontenTiga currentWeather={currentWeather} />
             <KontenEmpat currentWeather={currentWeather} darkMode={darkMode} setCurrentWeather={setCurrentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast} />
             <KontenLima />
-            <KontenSix currentWeather={currentWeather} darkMode={darkMode} />  */}
+            <KontenSix currentWeather={currentWeather} darkMode={darkMode} /> */}
+          </div>
         </div>
-    );
-}
+      );
+    }
 
 export default WeatherApp;

@@ -61,7 +61,7 @@ function rekomendasiPakaian(uvIndex) {
     };
 }
 
-export default function KontenSix({ currentWeather, darkMode }) {
+export default function KontenDelapan({ currentWeather, darkMode }) {
     // Misalnya, uvIndex diperoleh dari prop currentWeather
     const uvIndex = currentWeather.uvIndex || 0;
 
@@ -89,7 +89,7 @@ export default function KontenSix({ currentWeather, darkMode }) {
                             console.log('Button Clicked!');
                         }}
                     >
-                        Lihat lengkapnya<span className="ml-2">&#62;</span>
+                        Kesehatan & Keselamatan<span className="ml-2">&#62;</span>
                     </button>
                 </div>
 

@@ -61,7 +61,7 @@ function rekomendasiPakaian(uvIndex) {
     };
 }
 
-export default function KontenSix({ currentWeather, darkMode }) {
+export default function KontenTujuh({ currentWeather, darkMode }) {
     // Misalnya, uvIndex diperoleh dari prop currentWeather
     const uvIndex = currentWeather.uvIndex || 0;
 
@@ -85,11 +85,11 @@ export default function KontenSix({ currentWeather, darkMode }) {
                     <button
                         className="bg-fuchsia-950 text-white px-4 py-2 rounded-full font-semibold ml-auto w-full lg:w-auto"
                         onClick={() => {
-                            navigate('/Rekomendasi')
+                            navigate('/Aktifitas')
                             console.log('Button Clicked!');
                         }}
                     >
-                        Lihat lengkapnya<span className="ml-2">&#62;</span>
+                        Aktifitas<span className="ml-2">&#62;</span>
                     </button>
                 </div>
 

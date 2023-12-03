@@ -79,7 +79,7 @@ export default function KontenSix({ currentWeather, darkMode }) {
         <div className={` mt-4  max-w-8xl mx-auto shadow-xl shadow-black rounded-[30px] ${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
 
             <div className='flex flex-col p-2 '>
-                <div className="bg-neutral-700 p-4 m-2 rounded-  3xl flex justify-between items-center">
+                <div className="bg-neutral-700 p-4 m-2 rounded-3xl  3xl flex justify-between items-center">
                     <div className="flex items-center mb-2 ">
                         <img className="w-10 h-10 mr-6" src={payung_icon} alt="payung Icon" />
                         <div className="text-white font-poppins text-md lg:text-xl">Payung</div>

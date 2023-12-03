@@ -120,10 +120,11 @@ export default function KontenSix({ currentWeather, darkMode }) {
                         <img className="w-10 h-10 mr-6" src={pakaian_icon} alt="payung Icon" />
                         <div className="text-white font-poppins text-md lg:text-xl">Pakaian</div>
                     </div>
-                    <div className="flex items-center justify-end  ">
-                        <div className="mr-4 text-white font-poppins text-right w-[150px] h-auto  text-sm lg:text-xl">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
-                        <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
+                    <div className="flex items-center justify-end  w-[250px] h-auto ">
+                        <div className="mr-4 text-white font-poppins text-right  text-sm lg:text-xl">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
                     </div>
+                    <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
+
                 </div>
 
                 {/* List 5 */}

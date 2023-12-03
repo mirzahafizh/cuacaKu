@@ -75,13 +75,24 @@ export default function Kesehatan({ currentWeather ,darkMode}) {
         anginDingin
     } = rekomendasiPakaian(uvIndex);
 
+    const navigate = useNavigate()
 
     return(
 <div className="Kesehatan">
         <div className="flex">
             <div className="w-[1340px] h-[850px] relative mt-[20px] mb-24 shadow-xl  ml-[80px]">
                 <div className={`w-[1340px] h-[850px] left-0 top-[16px] absolute shadow-xl shadow-black  rounded-[30px] ${darkMode ?' bg-neutral-600 ':' bg-zinc-400'}`}>
-                 
+                    {/* Tombol */}
+                    <button
+                        className="w-[300px] h-[40px] absolute right-[20px] top-[20px] bg-fuchsia-950 bg-opacity-40 text-white rounded-3xl font-semibold"
+                        onClick={() => {
+                            // Logika yang dijalankan saat tombol diklik
+                            navigate('/Rekomendasi')
+                            console.log('Button Clicked!');
+                        }}
+                    >
+                        Aktifitas<span className="ml-2">&#62;</span>
+                    </button>
 
                     <div className='flex mt-10'>
                         {/* Tabel List */}

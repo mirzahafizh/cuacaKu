@@ -94,7 +94,7 @@ export default function KontenSix({ currentWeather, darkMode }) {
                 </div>
 
                 {/* List 1 */}
-                <div className="bg-neutral-700 p-4 m-2 rounded-3xl flex justify-between items-center">
+                <div className={` p-4 m-2 rounded-3xl flex justify-between items-center ${darkMode ? ' bg-neutral-700 ' : ' bg-zinc-500 '}`}>
                     <div className="flex items-center mb-2 ">
                         <img className="w-10 h-10 mr-6" src={payung_icon} alt="payung Icon" />
                         <div className="text-white font-poppins text-md lg:text-xl">Payung</div>
@@ -106,7 +106,7 @@ export default function KontenSix({ currentWeather, darkMode }) {
                 </div>
 
                 {/* List 2 */}
-                <div className="bg-neutral-700 p-4 m-2 rounded-3xl flex justify-between items-center">
+                <div className={` p-4 m-2 rounded-3xl flex justify-between items-center ${darkMode ? ' bg-neutral-700 ' : ' bg-zinc-500 '}`}>
                     <div className="flex items-center mb-2">
                         <img className="w-10 h-10 mr-6" src={run_icon} alt="run Icon" />
                         <div className="text-white font-poppins text-md lg:text-xl">Luar Ruangan</div>
@@ -118,7 +118,7 @@ export default function KontenSix({ currentWeather, darkMode }) {
                 </div>
 
                 {/* List 3 */}
-                <div className="bg-neutral-700 p-4 m-2 rounded-3xl flex justify-between items-center">
+                <div className={` p-4 m-2 rounded-3xl flex justify-between items-center ${darkMode ? ' bg-neutral-700 ' : ' bg-zinc-500 '}`}>
                     <div className="flex items-center mb-2">
                         <img className="w-10 h-10 mr-6" src={uv1_icon} alt="payung Icon" />
                         <div className="text-white font-poppins text-md lg:text-xl">Indeks UV</div>
@@ -130,20 +130,20 @@ export default function KontenSix({ currentWeather, darkMode }) {
                 </div>
 
                 {/* List 4 */}
-                <div className="bg-neutral-700 p-4 m-2 rounded-3xl flex justify-between items-center">
+                <div className={` p-4 m-2 rounded-3xl flex justify-between items-center ${darkMode ? ' bg-neutral-700 ' : ' bg-zinc-500 '}`}>
                     <div className="flex items-center  mb-2 w-1/3">
                         <img className="w-10 h-10 mr-6" src={pakaian_icon} alt="payung Icon" />
                         <div className="text-white font-poppins w-1/3 text-md lg:text-xl">Pakaian</div>
                     </div>
                     <div className="flex items-center justify-end  ml-auto w-1/3 h-auto   ">
-                        <div className="mr-4 text-white font-poppins text-left  text-sm lg:text-xl">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
+                        <div className="mr-4 text-white font-poppins text-right  text-sm lg:text-xl">{pakaian}</div> {/* Menambahkan ukuran font yang sedikit lebih besar */}
                     </div>
                     <div className={`rounded-full h-4 w-4 mr-2 ${indeksUV === 'Rendah' ? 'bg-green-500' : indeksUV === 'Sedang' ? 'bg-yellow-500' : 'bg-red-500'}`}></div> {/* Bulatan hijau */}
 
                 </div>
 
                 {/* List 5 */}
-                <div className="bg-neutral-700 p-4 m-2 rounded-3xl flex justify-between items-center">
+                <div className={` p-4 m-2 rounded-3xl flex justify-between items-center ${darkMode ? ' bg-neutral-700 ' : ' bg-zinc-500 '}`}>
                     <div className="flex items-center  mb-2 w-1/3">
                         <img className="w- h-10 mr-10 ml-3" src={temp_icon} alt="payung Icon" />
                         <div className="text-white font-poppins w-1/3 text-md lg:text-xl">Sengatan Panas</div>
@@ -155,7 +155,7 @@ export default function KontenSix({ currentWeather, darkMode }) {
                 </div>
 
                 {/* List 6 */}
-                <div className="bg-neutral-700 p-4 m-2 rounded-3xl flex justify-between items-center">
+                <div className={` p-4 m-2 rounded-3xl flex justify-between items-center ${darkMode ? ' bg-neutral-700 ' : ' bg-zinc-500 '}`}>
                     <div className="flex items-center  mb-2 w-1/3">
                         <img className="w- h-10 mr-10 ml-3" src={temp_icon} alt="payung Icon" />
                         <div className="text-white font-poppins w-1/3 text-md lg:text-xl">Angin Dingin</div>

@@ -6,6 +6,7 @@ import SearchBar from '../components/SearchBar';
 import ToggleButton from '../components/ToggleButton';
 import dummyData from '../data/dummyData.json';
 import KontenTujuh from '../components/KontenTujuh'
+import rekomendasiPakaianData from '../data/pakaianRecommendations.json';
 
 import clear_icon from '../assets/clear.png';
 import cloud_icon from '../assets/cloud.png';
@@ -109,6 +110,10 @@ const Rekomendasi = ({darkMode,setDarkMode}) => {
             default:
                 // Handle the case where the city is not found
                 setCurrentWeather(null);
+                const dummyRekomendasi = rekomendasiPakaianData.dummyRekomendasiPakaian.find(
+                    (item) => item.uvIndex === currentWeather.uvIndex
+                  );
+                  setRekomendasiPakaian(dummyRekomendasi || {});
                 break;
         }
 

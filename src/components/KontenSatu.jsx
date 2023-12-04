@@ -15,74 +15,98 @@ export default function KontenSatu({ darkMode, currentWeather, getWeatherIcon })
     // Gunakan getWeatherIcon di dalam komponen KontenSatu
     const weatherIcon = getWeatherIcon(currentWeather.weatherIcon);
 
-    return(
-        <div className="flex gap-4 mt-10 ml-[80px] ">
-            <div className="w-[510px] h-[330px] relative flex flex-col items-center justify-center ">
-                <div className={`w-[510px] h-[330px] left-0 top-0 absolute rounded-[30px] shadow-xl shadow-black ${darkMode ?' bg-neutral-600 ':' bg-zinc-400'}`} />
-                <div className="w-[296px] h-[228px] left-[107px] top-[54px] absolute flex flex-col items-center justify-center">
-                    <div className={`kota text-4xl font-bold  font-['Poppins'] ${darkMode ?' text-white ':' text-black'}`}>{currentWeather.city}</div>
-                    <div className={`time text-center text-[60px] mt-2 font-bold font-['Poppins'] ${darkMode ?' text-white ':' text-black'}`}>{currentWeather.time}</div>
-                    <div className={`date text-center text-xl mt-2 font-normal font-['Poppins'] ${darkMode ?' text-white ':' text-black' }`}>{currentWeather.date}</div>
-                </div>
+    return (
+        <div className="flex flex-col gap-4  w-auto justify-center lg:flex-row mb-4 mt-[90px] mx-auto max-w-8xl">
+            <div className={`flex flex-col shadow-xl shadow-black justify-center rounded-[30px] p-8 gap-4  lg:w-1/2 ${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
+                <div className={`kota text-4xl font-bold  text-center${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.city}</div>
+                <div className={`time text-center text-6xl lg:text-8xl mt-2 font-bold  ${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.time}</div>
+                <div className={`date text-center text-xl mt-2 font-normal '] ${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.date}</div>
             </div>
-                <div className={`current-forecast w-[780px] rounded-xl shadow-xl flex ml-5  shadow-black${darkMode ?' bg-neutral-600 ':' bg-zinc-400'}`}>
-                    <div className="main-current">
-                        <div className={`current-temp text-[50px] font-bold ml-5 mt-3 ${darkMode ?' text-white ':' text-black' }`} >{currentWeather.temperature}</div>
-                        <div className={`feels-like text-[20px] font-bold ml-5 flex ${darkMode ?' text-white ':' text-black' }`}> Feels like:
-                            <div className={`feels-like-temp font-bold ml-1 ${darkMode ?' text-white ':' text-black' }`}>{currentWeather.feelsLike}</div>
-                        </div>
-                        <div className="sunrise flex">
-                            <img className="w-[50px] h-[50px] mt-5 ml-8"  src={darkMode ? sunrise_icon : sunriseblack_icon} alt={darkMode ? "Sunrise Icon" : "Black Sunrise Icon"} />
-                            <div className="flex flex-col">
-                                <div className={`sunrise-text mt-5 ml-2 font-bold  ${darkMode ?' text-white ':' text-black' }  `}>Sunrise</div>
-                                <div className={`sunrise-time ml-2  ${darkMode ?' text-white ':' text-black' } `}>{currentWeather.sunrise}</div>
-                            </div>
-                        </div>
-                        <div className="sunset flex">
-                            <img className="w-[50px] h-[50px] mt-5 ml-8" src={darkMode ? sunset_icon : sunsetblack_icon} alt={darkMode ? "Sunset Icon" : "Black Sunset Icon"} />
-                            <div className="flex flex-col">
-                                <div className={`sunset-text mt-5 ml-2 font-bold  ${darkMode ?' text-white ':' text-black' } `}>Sunset</div>
-                                <div className={`sunset-time ml-2 ${darkMode ?' text-white ':' text-black' } `}>{currentWeather.sunset}</div>
-                            </div>
-                        </div>
+            <div className={`rounded-[30px] w-full shadow-xl shadow-black mx-auto justify-between flex flex-col lg:flex-row ${darkMode ? 'bg-neutral-600' : 'bg-zinc-400'}`}>
+                <div className='flex justify-between p-4 lg:flex-col'>
+                    <div className='flex flex-col'>
+                        <span className={`text-xl font-bold ${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.temperature}</span>
+                        <span className={`text-lg font-bold ${darkMode ? ' text-white ' : ' text-black'}`}>Feels like: {currentWeather.feelsLike}</span>
                     </div>
-                    <div className="current-weather ml-[70px]">
-                        <img src={weatherIcon} alt="" />
-                        <div className={`weather-text text-[50px] font-bold ml-[40px] font-['Poppins'] ${darkMode ?' text-white ':' text-black' }`}>{currentWeather.weatherDescription}</div>
-                    </div>
-                    <div className="detail ml-[70px] ">
-                        <div className="w-[247px] h-[328px] relative">
-                            <div className="w-[107.40px] left-[131px] top-[172px] absolute">
-                                <div className="w-[107.40px] h-[73.05px] left-0 top-[65.90px] absolute">
-                                    <div className={`w-[107.40px] h-[32.20px] left-0 top-[40.86px] absolute text-center  text-base font-medium font-['Poppins']  ${darkMode ?' text-white ':' text-black' }`}>UV</div>
-                                    <div className={`w-[104.57px] h-[40.67px] left-[2.48px] top-0 absolute text-center text-xl font-semibold font-['Poppins']  ${darkMode ?' text-white ':' text-black' }`}>{currentWeather.uvIndex}</div>
-                                </div>
-                                <img className="w-[58px] h-[58px] left-[26px] top-0 absolute" src={darkMode ? uvWhite_icon : uvBlack_icon} alt={darkMode ? "Uv Icon" : "Black UV Icon"} />
+                    <div className='flex flex-col gap-2'>
+                        <div className='flex items-center gap-2'>
+                            <img src={darkMode ? sunrise_icon : sunriseblack_icon} alt={darkMode ? "Sunrise Icon" : "Black Sunrise Icon"} className='w-10 h-10' />
+                            <div className='flex flex-col'>
+                                <span className={`text-lg ${darkMode ? ' text-white ' : ' text-black'}`}>Sunrise</span>
+                                <span className={`text-lg ${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.sunrise}</span>
                             </div>
-                            <div className="w-[113.94px] left-[-0px] top-[172px] absolute">
-                                <div className="w-[113.94px] h-[73.05px] left-0 top-[65.90px] absolute">
-                                    <div className={`w-[113.30px] h-[32.19px] left-[-0px] top-[40.86px] absolute text-center  text-base font-medium font-['Poppins'] ${darkMode ?' text-white ':' text-black' }`}>Pressure</div>
-                                    <div className={`w-[110.32px] h-[40.67px] left-[3.62px] top-[-0px] absolute text-center text-xl font-semibold font-['Poppins'] ${darkMode ?' text-white ':' text-black' }`}>{currentWeather.pressure}</div>
-                                </div>
-                                <img className="w-[58px] h-[58px] left-[28px] top-0 absolute" src={darkMode ? preasureWhite_icon : preasureBlack_icon} alt={darkMode ? "Preasure Icon" : "Black Preasure Icon"} />
-                            </div>
-                            <div className="w-[107.40px] left-[131px] top-[21px] absolute">
-                                <div className="w-[107.40px] h-[73.05px] left-0 top-[64.90px] absolute">
-                                    <div className={`w-[107.40px] h-[32.20px] left-0 top-[40.86px] absolute text-center  text-base font-medium font-['Poppins'] ${darkMode ?' text-white ':' text-black' } `}>Wind Speed</div>
-                                    <div className={`w-[104.57px] h-[40.67px] left-[2.48px] top-[-0px] absolute text-center  text-xl font-semibold font-['Poppins'] ${darkMode ?' text-white ':' text-black' } `}>{currentWeather.windSpeed}</div>
-                                </div>
-                                <img className="w-[60px] h-[59.24px] left-[25px] top-0 absolute" src={darkMode ? wind_icon : windBlack_icon} alt={darkMode ? "Wind Icon" : "Black Wind Icon"} />
-                            </div>
-                            <div className="w-[113.94px] h-[132.95px] left-0 top-[26px] absolute">
-                                <div className="w-[113.94px] h-[73.05px] left-0 top-[59.90px] absolute">
-                                    <div className={`w-[113.30px] h-[32.19px] left-[-0px] top-[40.86px] absolute text-center  text-base font-medium font-['Poppins'] ${darkMode ?' text-white ':' text-black' } `}>Humidity</div>
-                                    <div className={`w-[110.32px] h-[40.67px] left-[3.62px] top-[-0px] absolute text-center  text-xl font-semibold font-['Poppins'] ${darkMode ?' text-white ':' text-black' }`}>{currentWeather.humidity}</div>
-                                </div>
-                                <img className="w-[60px] h-[50.13px] left-[29px] top-0 absolute"  src={darkMode ? humidity_icon : humidityBlack_icon} alt={darkMode ? "Humidity Icon" : "Black Humidity Icon"} />
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <img src={darkMode ? sunset_icon : sunsetblack_icon} alt={darkMode ? "Sunset Icon" : "Black Sunset Icon"} className='w-10 h-10' />
+                            <div className='flex flex-col'>
+                                <span className={`text-lg ${darkMode ? ' text-white ' : ' text-black'}`}>Sunset</span>
+                                <span className={`text-lg ${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.sunset}</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div className='flex flex-col justify-center items-center mb-4'>
+                    <img src={weatherIcon} alt="Weather Icon" className='w-1/2 h-1/2 lg:w-auto ' />
+                    <span className={`text-4xl font-bold ${darkMode ? ' text-white ' : ' text-black'}`}>{currentWeather.weatherDescription}</span>
+                </div>
+                <div className="flex flex-col w-full lg:w-auto">
+                    <div className={`flex p-2 text-center ${darkMode ? 'text-white' : 'text-black'}`}>
+                        <div className="flex-1">Humidity</div>
+                        <div className="flex-1">Wind Speed</div>
+                    </div>
+                    <div className="flex items-center p-2 text-center">
+                        <div className="flex-1">
+                            <div className="flex flex-col items-center">
+                                <img src={darkMode ? humidity_icon : humidityBlack_icon} alt={darkMode ? "Humidity Icon" : "Black Humidity Icon"} />
+                            </div>
+                        </div>
+                        <div className="flex-1">
+                            <div className="flex flex-col items-center">
+                                <img src={darkMode ? wind_icon : windBlack_icon} alt={darkMode ? "Wind Icon" : "Black Wind Icon"} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center p-2 text-center">
+                        <div className="flex-1">
+                            <div className={`${darkMode ? 'text-white' : 'text-black'}`}>{currentWeather.humidity}</div>
+                        </div>
+                        <div className="flex-1">
+                            <div className={`${darkMode ? 'text-white' : 'text-black'}`}>{currentWeather.windSpeed}</div>
+                        </div>
+                    </div>
+                    <div className={`flex p-2 text-center ${darkMode ? 'text-white' : 'text-black'}`}>
+                        <div className="flex-1">Pressure</div>
+                        <div className="flex-1">UV</div>
+                    </div>
+                    <div className="flex items-center p-2 text-center">
+                        <div className="flex-1">
+                            <div className="flex flex-col items-center">
+                                <img src={darkMode ? preasureWhite_icon : preasureBlack_icon} alt={darkMode ? "Pressure Icon" : "Black Pressure Icon"} />
+                            </div>
+                        </div>
+                        <div className="flex-1">
+                            <div className="flex flex-col items-center">
+                                <img src={darkMode ? uvWhite_icon : uvBlack_icon} alt={darkMode ? "UV Icon" : "Black UV Icon"} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center p-2 text-center">
+                        <div className="flex-1">
+                            <div className={`${darkMode ? 'text-white' : 'text-black'}`}>{currentWeather.pressure}</div>
+                        </div>
+                        <div className="flex-1">
+                            <div className={`${darkMode ? 'text-white' : 'text-black'}`}>{currentWeather.uvIndex}</div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
+
+
+
+
+
+        </div>
     )
 }

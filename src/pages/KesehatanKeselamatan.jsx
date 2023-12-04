@@ -1,14 +1,12 @@
-
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { default as React, useEffect, useState } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
-import KontenDua from '../components/KontenDua';
-import KontenEmpat from '../components/KontenEmpat';
-import KontenSatu from '../components/KontenSatu';
-import KontenSix from '../components/KontenSix';
 import SearchBar from '../components/SearchBar';
 import ToggleButton from '../components/ToggleButton';
 import dummyData from '../data/dummyData.json';
+import KontenTujuh from '../components/KontenTujuh'
+import rekomendasiPakaianData from '../data/pakaianRecommendations.json';
 
 import clear_icon from '../assets/clear.png';
 import cloud_icon from '../assets/cloud.png';
@@ -34,7 +32,7 @@ const getWeatherIcon = (iconCode) => {
     };
     
 
-const WeatherApp = ({darkMode,setDarkMode}) => {
+const Rekomendasi = ({darkMode,setDarkMode}) => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [currentWeather, setCurrentWeather] = useState(dummyData.dummyCurrentWeatherJakarta);
@@ -112,37 +110,36 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
             default:
                 // Handle the case where the city is not found
                 setCurrentWeather(null);
+                const dummyRekomendasi = rekomendasiPakaianData.dummyRekomendasiPakaian.find(
+                    (item) => item.uvIndex === currentWeather.uvIndex
+                  );
+                  setRekomendasiPakaian(dummyRekomendasi || {});
                 break;
         }
 
         
     };
 
+    const navigate = useNavigate();
 
+    const handleTitleClick = () => {
+        navigate('/');
+    };
 
     return (
         <div className={`min-h-screen ${darkMode ? 'bg-gradient-to-r from-neutral-700 to-stone-900' : 'bg-gradient-to-br from-white to-slate-600'}`}>
           <div className="container mx-auto p-6 w-auto">
             <div className="flex flex-col max-w-8xl mx-auto w-full">
               <div className="flex flex-col md:flex-row justify-between items-center md:gap-4">
-                <h1 className={`text-4xl md:text-5xl text-[Poppins] text-center mb-4 md:mb-0 ${darkMode ? 'text-white' : 'text-black'}`}>CuacaKu</h1>
+                <h1 className={`text-4xl md:text-5xl text-[Poppins] text-center mb-4 md:mb-0 ${darkMode ? 'text-white' : 'text-black'}`}onClick={handleTitleClick}>CuacaKu</h1>
                 <SearchBar handleInputChange={handleInputChange} handleKeyPress={handleKeyPress} handleSearch={handleSearch} searchTerm={searchTerm} />
                 <ToggleButton darkMode={darkMode} setDarkMode={setDarkMode} />
               </div>
             </div>
-      
-            <KontenSatu getWeatherIcon={getWeatherIcon} darkMode={darkMode} currentWeather={currentWeather}/>
-            <KontenDua getWeatherIcon={getWeatherIcon} darkMode={darkMode} currentWeather={currentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast}/>
-      
-            <div className={`rounded-[11px] shadow-xl shadow-black text-center mx-auto mt-5 text-white font-bold text-xl p-1 lg:max-w-5xl lg:w-72 w-full${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
-              Prakiraan Cuaca
-            </div>
-            <KontenEmpat getWeatherIcon={getWeatherIcon} currentWeather={currentWeather} darkMode={darkMode} setCurrentWeather={setCurrentWeather} fiveDaysForecast={fiveDaysForecast} hourlyForecast={hourlyForecast}/>
-      
             <div className={`rounded-[11px] mt-16 shadow-xl shadow-black text-center mx-auto text-white font-bold text-xl p-1 lg:max-w-5xl lg:w-72 w-full${darkMode ? ' bg-neutral-600 ' : ' bg-zinc-400'}`}>
               Kesehatan & Keselamatan
             </div>
-            <KontenSix currentWeather={currentWeather} darkMode={darkMode} />
+            <KontenTujuh currentWeather={currentWeather} darkMode={darkMode} />
       
             <div className={`fixed bottom-8 right-8 bg-blue-500 text-white p-2 rounded-full cursor-pointer`} onClick={handleGoToTop}>
               <FaArrowUp size={20} />
@@ -153,4 +150,4 @@ const WeatherApp = ({darkMode,setDarkMode}) => {
       
 }
 
-export default WeatherApp;
+export default Rekomendasi;

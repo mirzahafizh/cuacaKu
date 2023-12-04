@@ -36,7 +36,7 @@ export default function KontenDua({darkMode,currentWeather,fiveDaysForecast,hour
                 </div>
             </div>
 
-            <div className={`flex flex-col shadow-xl shadow-black w-full mb-4 justify-center border-1 items-center w max-w-5xl rounded-[30px] p-4 lg:w-2/3 h-auto ${darkMode ? ' bg-neutral-600 text-white' : ' bg-zinc-400 text-black'}`}>
+            <div className={`flex flex-col shadow-xl shadow-black w-full mb-4 justify-center items-center w max-w-5xl rounded-[30px] p-4 lg:w-2/3 h-auto ${darkMode ? ' bg-neutral-600 text-white' : ' bg-zinc-400 text-black'}`}>
                 <div className={`${darkMode ? 'text-white' : 'text-black'} mt-[-30px] text-lg mb-4 sm:text-xl`}>
                     Hourly Forecast:
                 </div>
